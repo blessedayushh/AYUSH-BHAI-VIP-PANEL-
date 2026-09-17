@@ -1,0 +1,6 @@
+{
+  "name": "AYUSH BHAI VIP PANEL 👑",
+  "description": "AI-powered colour-game analytics, quantitative trade analysis, and prediction dashboard with walk-forward validation and strict activation thresholds.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
