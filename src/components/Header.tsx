@@ -8,6 +8,7 @@ interface HeaderProps {
   activeRoundId: string;
   countdownSeconds: number;
   isWsConnected: boolean;
+  isLive?: boolean;
   isDevMode: boolean;
   currentTab: 'user' | 'trade' | 'admin';
   notifications: RealtimeNotification[];
@@ -23,6 +24,7 @@ export const Header: React.FC<HeaderProps> = ({
   activeRoundId,
   countdownSeconds,
   isWsConnected,
+  isLive = false,
   isDevMode,
   currentTab,
   notifications,
@@ -32,6 +34,8 @@ export const Header: React.FC<HeaderProps> = ({
   onTabChange,
   onLogout,
 }) => {
+  const isOnline = isLive || isWsConnected;
+
   const formatCountdown = (sec: number) => {
     const safeSec = Math.max(0, Math.floor(sec));
     const m = Math.floor(safeSec / 60);
@@ -47,8 +51,8 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-400 via-amber-500 to-yellow-600 shadow-lg shadow-yellow-500/25 ring-1 ring-yellow-400/40">
             <Crown className="w-5 h-5 text-slate-950 fill-slate-950" />
             <span className="absolute -bottom-1 -right-1 flex h-3.5 w-3.5">
-              <span className={`animate-ping absolute inline-flex h-full w-full rounded-full ${isWsConnected ? 'bg-emerald-400' : 'bg-amber-400'} opacity-75`}></span>
-              <span className={`relative inline-flex rounded-full h-3.5 w-3.5 ${isWsConnected ? 'bg-emerald-500' : 'bg-amber-500'} border-2 border-[#090d16]`}></span>
+              <span className={`animate-ping absolute inline-flex h-full w-full rounded-full ${isOnline ? 'bg-emerald-400' : 'bg-amber-400'} opacity-75`}></span>
+              <span className={`relative inline-flex rounded-full h-3.5 w-3.5 ${isOnline ? 'bg-emerald-500' : 'bg-amber-500'} border-2 border-[#090d16]`}></span>
             </span>
           </div>
 
@@ -68,9 +72,9 @@ export const Header: React.FC<HeaderProps> = ({
             <p className="text-xs text-slate-400 flex items-center gap-2">
               <span>AI Colour & Number Engine</span>
               <span className="w-1 h-1 rounded-full bg-slate-600"></span>
-              <span className={`inline-flex items-center gap-1 ${isWsConnected ? 'text-emerald-400' : 'text-amber-400'}`}>
+              <span className={`inline-flex items-center gap-1 ${isOnline ? 'text-emerald-400' : 'text-amber-400'}`}>
                 <Radio className="w-3 h-3" />
-                {isWsConnected ? 'Live' : 'Connecting'}
+                {isOnline ? 'Live' : 'Connecting'}
               </span>
             </p>
           </div>

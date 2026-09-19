@@ -119,50 +119,16 @@ export const LoginModal: React.FC<LoginModalProps> = ({ onLoginSuccess }) => {
           </button>
         </form>
 
-        {/* Quick Admin & VIP Logins */}
-        <div className="mt-4 pt-4 border-t border-slate-800 space-y-2">
-          <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider text-center">
-            One-Click Login Credentials
+        {/* Security & VIP Notice */}
+        <div className="mt-5 pt-4 border-t border-slate-800/80 text-center">
+          <div className="flex items-center justify-center gap-1.5 text-xs text-slate-400">
+            <Lock className="w-3.5 h-3.5 text-amber-400/80" />
+            <span>VIP License required. Enter your registered username and key.</span>
           </div>
-          <div className="grid grid-cols-2 gap-2">
-            <button
-              type="button"
-              id="btn-quick-admin"
-              onClick={() => {
-                setUsername('admin');
-                setLicenseKey('admin');
-              }}
-              className="px-2.5 py-1.5 rounded-lg bg-purple-950/40 hover:bg-purple-900/50 border border-purple-500/30 text-xs text-purple-300 font-medium transition-colors text-center"
-            >
-              👑 Fill Admin (admin)
-            </button>
-            <button
-              type="button"
-              id="btn-quick-master"
-              onClick={() => {
-                setUsername('blessed.ayushh');
-                setLicenseKey('ashut999');
-              }}
-              className="px-2.5 py-1.5 rounded-lg bg-rose-950/40 hover:bg-rose-900/50 border border-rose-500/30 text-xs text-rose-300 font-medium transition-colors text-center"
-            >
-              💎 Master (ashut999)
-            </button>
-          </div>
+          <p className="text-[11px] text-slate-500 mt-2">
+            Contact administrator to purchase or renew your VIP prediction license.
+          </p>
         </div>
-
-        {/* Security & Access Notice */}
-        <div className="mt-4 pt-4 border-t border-slate-800">
-          <div className="p-3 rounded-xl bg-slate-900/90 border border-slate-800/80 flex items-center justify-center gap-2.5 text-xs text-slate-400">
-            <Lock className="w-4 h-4 text-amber-400 shrink-0" />
-            <span className="leading-tight">
-              Admin Access: <strong>admin</strong> / <strong>admin</strong> (or key <strong>ashut999</strong>).
-            </span>
-          </div>
-        </div>
-
-        <p className="text-[11px] text-center text-slate-500 mt-4">
-          All predictions are continuously verified using chronological walk-forward validation.
-        </p>
       </div>
     </div>
   );

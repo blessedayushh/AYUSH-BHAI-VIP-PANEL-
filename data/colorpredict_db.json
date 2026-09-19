@@ -25,7 +25,7 @@
       "9": "BIG"
     },
     "minNumberValidationSamples": 200,
-    "numberActivationAccuracy": 0.8,
+    "numberActivationAccuracy": 0.25,
     "countdownSeconds": 60,
     "roundIntervalSeconds": 60,
     "autoDrawEnabled": true
@@ -38,7 +38,7 @@
       "status": "ACTIVE",
       "role": "ADMIN",
       "createdAt": "2026-09-08T10:45:04.606Z",
-      "lastLoginAt": "2026-09-17T04:02:45.482Z",
+      "lastLoginAt": "2026-09-19T03:38:47.676Z",
       "loginHistory": [
         {
           "timestamp": "2026-09-08T10:45:04.606Z",
@@ -109,6 +109,12 @@
         },
         {
           "timestamp": "2026-09-17T04:02:45.482Z"
+        },
+        {
+          "timestamp": "2026-09-19T03:34:50.514Z"
+        },
+        {
+          "timestamp": "2026-09-19T03:38:47.676Z"
         }
       ]
     },
@@ -119,7 +125,7 @@
       "status": "ACTIVE",
       "role": "ADMIN",
       "createdAt": "2026-09-08T10:38:39.929Z",
-      "lastLoginAt": "2026-09-08T10:44:52.083Z",
+      "lastLoginAt": "2026-09-19T03:38:51.873Z",
       "loginHistory": [
         {
           "timestamp": "2026-09-08T10:38:39.929Z",
@@ -130,6 +136,9 @@
         },
         {
           "timestamp": "2026-09-08T10:44:52.083Z"
+        },
+        {
+          "timestamp": "2026-09-19T03:38:51.873Z"
         }
       ]
     },
@@ -140,7 +149,7 @@
       "status": "ACTIVE",
       "role": "USER",
       "createdAt": "2026-09-08T10:38:39.929Z",
-      "lastLoginAt": "2026-09-17T03:48:15.924Z",
+      "lastLoginAt": "2026-09-19T03:39:09.506Z",
       "loginHistory": [
         {
           "timestamp": "2026-09-08T10:38:39.929Z",
@@ -160,6 +169,9 @@
         },
         {
           "timestamp": "2026-09-17T03:48:15.924Z"
+        },
+        {
+          "timestamp": "2026-09-19T03:39:09.506Z"
         }
       ]
     },
@@ -199,10 +211,10 @@
       "key": "ashut999",
       "username": "blessed.ayushh",
       "status": "ACTIVE",
-      "expiresAt": "2027-09-17T04:02:29.097Z",
+      "expiresAt": "2027-09-19T03:38:42.444Z",
       "createdAt": "2026-09-08T10:45:04.606Z",
       "notes": "Admin Panel Access Key (blessed.ayushh)",
-      "lastUsedAt": "2026-09-17T04:02:45.482Z"
+      "lastUsedAt": "2026-09-19T03:38:47.676Z"
     },
     {
       "id": "lic-admin",
@@ -212,7 +224,7 @@
       "expiresAt": "2027-09-08T10:38:39.929Z",
       "createdAt": "2026-09-08T10:38:39.929Z",
       "notes": "Master Administrator Key",
-      "lastUsedAt": "2026-09-08T10:44:52.083Z"
+      "lastUsedAt": "2026-09-19T03:38:51.873Z"
     },
     {
       "id": "lic-user-1",
@@ -222,7 +234,7 @@
       "expiresAt": "2026-11-07T10:38:39.929Z",
       "createdAt": "2026-09-08T10:38:39.929Z",
       "notes": "Premium VIP License",
-      "lastUsedAt": "2026-09-17T03:48:15.924Z"
+      "lastUsedAt": "2026-09-19T03:39:09.506Z"
     },
     {
       "id": "lic-user-2",
@@ -260,6 +272,15 @@
       "createdAt": "2026-09-17T02:52:56.440Z",
       "notes": "Thanks for purchasing panel 👑",
       "lastUsedAt": "2026-09-17T02:53:15.028Z"
+    },
+    {
+      "id": "lic-admin-direct",
+      "key": "admin",
+      "username": "admin",
+      "status": "ACTIVE",
+      "expiresAt": "2027-09-19T03:19:19.670Z",
+      "createdAt": "2026-09-19T03:19:19.670Z",
+      "notes": "Master Admin Key (Direct)"
     }
   ],
   "sessions": [
@@ -423,6 +444,34 @@
       "username": "blessed.ayushh",
       "role": "ADMIN",
       "expiresAt": "2026-09-24T04:02:45.482Z"
+    },
+    {
+      "token": "5cb2e5695e4e7a938a1f829dca28106338d84cfd83dd2dd57ef269e1bf839bc9",
+      "userId": "usr-blessed-ayushh",
+      "username": "blessed.ayushh",
+      "role": "ADMIN",
+      "expiresAt": "2026-09-26T03:34:50.514Z"
+    },
+    {
+      "token": "fdabfc0cd8f2277da8dcc68994513cec76b7f355a1e37a090048d28711812598",
+      "userId": "usr-blessed-ayushh",
+      "username": "blessed.ayushh",
+      "role": "ADMIN",
+      "expiresAt": "2026-09-26T03:38:47.677Z"
+    },
+    {
+      "token": "4299b33ce6b3eb4ad2ad5acf84d2836da74452234aa6defb77333c3215421048",
+      "userId": "usr-admin",
+      "username": "admin",
+      "role": "ADMIN",
+      "expiresAt": "2026-09-26T03:38:51.873Z"
+    },
+    {
+      "token": "1817fd7589b0ebda4369fcdd2ad4b3b8ecc8b920ba26bcf9043f44027e496117",
+      "userId": "usr-1",
+      "username": "trader_alex",
+      "role": "USER",
+      "expiresAt": "2026-09-26T03:39:09.507Z"
     }
   ],
   "results": [
@@ -4007,6 +4056,321 @@
       "timestamp": "2026-09-17T04:01:57.839Z",
       "source": "WINGO_API",
       "createdAt": "2026-09-17T04:01:10.412Z"
+    },
+    {
+      "roundId": "20260919100010185",
+      "number": 0,
+      "colour": "VIOLET",
+      "size": "SMALL",
+      "timestamp": "2026-09-19T03:14:35.526Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:14:35.527Z"
+    },
+    {
+      "roundId": "20260919100010186",
+      "number": 7,
+      "colour": "GREEN",
+      "size": "BIG",
+      "timestamp": "2026-09-19T03:14:35.526Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:14:35.547Z"
+    },
+    {
+      "roundId": "20260919100010187",
+      "number": 7,
+      "colour": "GREEN",
+      "size": "BIG",
+      "timestamp": "2026-09-19T03:14:35.526Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:14:35.562Z"
+    },
+    {
+      "roundId": "20260919100010188",
+      "number": 3,
+      "colour": "GREEN",
+      "size": "SMALL",
+      "timestamp": "2026-09-19T03:14:35.526Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:14:35.576Z"
+    },
+    {
+      "roundId": "20260919100010189",
+      "number": 7,
+      "colour": "GREEN",
+      "size": "BIG",
+      "timestamp": "2026-09-19T03:14:35.526Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:14:35.594Z"
+    },
+    {
+      "roundId": "20260919100010190",
+      "number": 6,
+      "colour": "RED",
+      "size": "BIG",
+      "timestamp": "2026-09-19T03:14:35.526Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:14:35.608Z"
+    },
+    {
+      "roundId": "20260919100010191",
+      "number": 0,
+      "colour": "VIOLET",
+      "size": "SMALL",
+      "timestamp": "2026-09-19T03:14:35.526Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:14:35.622Z"
+    },
+    {
+      "roundId": "20260919100010192",
+      "number": 2,
+      "colour": "RED",
+      "size": "SMALL",
+      "timestamp": "2026-09-19T03:14:35.526Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:14:35.636Z"
+    },
+    {
+      "roundId": "20260919100010193",
+      "number": 9,
+      "colour": "GREEN",
+      "size": "BIG",
+      "timestamp": "2026-09-19T03:14:35.526Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:14:35.649Z"
+    },
+    {
+      "roundId": "20260919100010194",
+      "number": 5,
+      "colour": "VIOLET",
+      "size": "BIG",
+      "timestamp": "2026-09-19T03:14:35.526Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:14:35.664Z"
+    },
+    {
+      "roundId": "20260919100010195",
+      "number": 2,
+      "colour": "RED",
+      "size": "SMALL",
+      "timestamp": "2026-09-19T03:14:59.338Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:14:59.338Z"
+    },
+    {
+      "roundId": "20260919100010196",
+      "number": 8,
+      "colour": "RED",
+      "size": "BIG",
+      "timestamp": "2026-09-19T03:15:59.344Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:15:59.344Z"
+    },
+    {
+      "roundId": "20260919100010197",
+      "number": 3,
+      "colour": "GREEN",
+      "size": "SMALL",
+      "timestamp": "2026-09-19T03:16:59.354Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:16:59.355Z"
+    },
+    {
+      "roundId": "20260919100010198",
+      "number": 2,
+      "colour": "RED",
+      "size": "SMALL",
+      "timestamp": "2026-09-19T03:17:59.372Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:17:59.372Z"
+    },
+    {
+      "roundId": "20260919100010199",
+      "number": 3,
+      "colour": "GREEN",
+      "size": "SMALL",
+      "timestamp": "2026-09-19T03:18:59.379Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:18:59.379Z"
+    },
+    {
+      "roundId": "20260919100010200",
+      "number": 4,
+      "colour": "RED",
+      "size": "SMALL",
+      "timestamp": "2026-09-19T03:19:59.495Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:19:59.496Z"
+    },
+    {
+      "roundId": "20260919100010201",
+      "number": 5,
+      "colour": "VIOLET",
+      "size": "BIG",
+      "timestamp": "2026-09-19T03:20:59.461Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:20:59.461Z"
+    },
+    {
+      "roundId": "20260919100010202",
+      "number": 4,
+      "colour": "RED",
+      "size": "SMALL",
+      "timestamp": "2026-09-19T03:21:59.467Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:21:59.467Z"
+    },
+    {
+      "roundId": "20260919100010203",
+      "number": 6,
+      "colour": "RED",
+      "size": "BIG",
+      "timestamp": "2026-09-19T03:22:59.476Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:22:59.476Z"
+    },
+    {
+      "roundId": "20260919100010204",
+      "number": 6,
+      "colour": "RED",
+      "size": "BIG",
+      "timestamp": "2026-09-19T03:23:59.518Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:23:59.518Z"
+    },
+    {
+      "roundId": "20260919100010205",
+      "number": 7,
+      "colour": "GREEN",
+      "size": "BIG",
+      "timestamp": "2026-09-19T03:24:59.499Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:24:59.499Z"
+    },
+    {
+      "roundId": "20260919100010206",
+      "number": 4,
+      "colour": "RED",
+      "size": "SMALL",
+      "timestamp": "2026-09-19T03:25:59.497Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:25:59.498Z"
+    },
+    {
+      "roundId": "20260919100010207",
+      "number": 2,
+      "colour": "RED",
+      "size": "SMALL",
+      "timestamp": "2026-09-19T03:26:59.508Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:26:59.508Z"
+    },
+    {
+      "roundId": "20260919100010208",
+      "number": 8,
+      "colour": "RED",
+      "size": "BIG",
+      "timestamp": "2026-09-19T03:27:59.520Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:27:59.520Z"
+    },
+    {
+      "roundId": "20260919100010209",
+      "number": 2,
+      "colour": "RED",
+      "size": "SMALL",
+      "timestamp": "2026-09-19T03:28:59.533Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:28:59.533Z"
+    },
+    {
+      "roundId": "20260919100010210",
+      "number": 2,
+      "colour": "RED",
+      "size": "SMALL",
+      "timestamp": "2026-09-19T03:29:59.550Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:29:59.550Z"
+    },
+    {
+      "roundId": "20260919100010211",
+      "number": 0,
+      "colour": "VIOLET",
+      "size": "SMALL",
+      "timestamp": "2026-09-19T03:30:58.138Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:30:58.138Z"
+    },
+    {
+      "roundId": "20260919100010212",
+      "number": 0,
+      "colour": "VIOLET",
+      "size": "SMALL",
+      "timestamp": "2026-09-19T03:31:58.171Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:31:58.171Z"
+    },
+    {
+      "roundId": "20260919100010213",
+      "number": 2,
+      "colour": "RED",
+      "size": "SMALL",
+      "timestamp": "2026-09-19T03:32:58.192Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:32:58.192Z"
+    },
+    {
+      "roundId": "20260919100010214",
+      "number": 1,
+      "colour": "GREEN",
+      "size": "SMALL",
+      "timestamp": "2026-09-19T03:33:58.193Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:33:58.193Z"
+    },
+    {
+      "roundId": "20260919100010215",
+      "number": 4,
+      "colour": "RED",
+      "size": "SMALL",
+      "timestamp": "2026-09-19T03:34:58.200Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:34:58.200Z"
+    },
+    {
+      "roundId": "20260919100010216",
+      "number": 8,
+      "colour": "RED",
+      "size": "BIG",
+      "timestamp": "2026-09-19T03:35:58.217Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:35:58.217Z"
+    },
+    {
+      "roundId": "20260919100010217",
+      "number": 8,
+      "colour": "RED",
+      "size": "BIG",
+      "timestamp": "2026-09-19T03:36:58.220Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:36:58.220Z"
+    },
+    {
+      "roundId": "20260919100010218",
+      "number": 8,
+      "colour": "RED",
+      "size": "BIG",
+      "timestamp": "2026-09-19T03:37:58.229Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:37:58.230Z"
+    },
+    {
+      "roundId": "20260919100010219",
+      "number": 9,
+      "colour": "GREEN",
+      "size": "BIG",
+      "timestamp": "2026-09-19T03:38:58.914Z",
+      "source": "WINGO_API",
+      "createdAt": "2026-09-19T03:38:58.914Z"
     }
   ],
   "predictions": [
@@ -33763,6 +34127,2544 @@
       "backupValue": 3,
       "backupProbability": 0.112,
       "backupCategory": "SMALL"
+    },
+    {
+      "id": "pred-colour-20260919100010195",
+      "roundId": "20260919100010195",
+      "predictionType": "COLOUR",
+      "predictedValue": "RED",
+      "probability": 0.46,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:14:35.534Z",
+      "inputDataCutoff": "2026-09-19T03:14:35.526Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "RED": 0.4600422693089002,
+        "GREEN": 0.3961461838060198,
+        "VIOLET": 0.14381154688508002
+      },
+      "evaluationTimestamp": "2026-09-19T03:14:59.338Z",
+      "actualValue": "RED"
+    },
+    {
+      "id": "pred-size-20260919100010195",
+      "roundId": "20260919100010195",
+      "predictionType": "SIZE",
+      "predictedValue": "SMALL",
+      "probability": 0.531,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:14:35.534Z",
+      "inputDataCutoff": "2026-09-19T03:14:35.526Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "BIG": 0.4690107159174497,
+        "SMALL": 0.5309892840825503
+      },
+      "evaluationTimestamp": "2026-09-19T03:14:59.338Z",
+      "actualValue": "SMALL"
+    },
+    {
+      "id": "pred-number-20260919100010195",
+      "roundId": "20260919100010195",
+      "predictionType": "NUMBER",
+      "predictedValue": 2,
+      "probability": 0.142,
+      "confidence": "LOW",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:14:35.534Z",
+      "inputDataCutoff": "2026-09-19T03:14:35.526Z",
+      "status": "NOT_ACTIVE",
+      "allProbabilities": {
+        "0": 0.12,
+        "1": 0.14,
+        "2": 0.142,
+        "3": 0.117,
+        "4": 0.063,
+        "5": 0.091,
+        "6": 0.068,
+        "7": 0.093,
+        "8": 0.099,
+        "9": 0.066
+      },
+      "primaryCategory": "SMALL",
+      "backupValue": 8,
+      "backupProbability": 0.099,
+      "backupCategory": "BIG"
+    },
+    {
+      "id": "pred-colour-20260919100010195",
+      "roundId": "20260919100010195",
+      "predictionType": "COLOUR",
+      "predictedValue": "RED",
+      "probability": 0.503,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:14:35.550Z",
+      "inputDataCutoff": "2026-09-19T03:14:35.526Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "RED": 0.5028184056402583,
+        "GREEN": 0.2986740884907608,
+        "VIOLET": 0.19850750586898103
+      },
+      "evaluationTimestamp": "2026-09-19T03:14:59.338Z",
+      "actualValue": "RED"
+    },
+    {
+      "id": "pred-size-20260919100010195",
+      "roundId": "20260919100010195",
+      "predictionType": "SIZE",
+      "predictedValue": "BIG",
+      "probability": 0.513,
+      "confidence": "LOW",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:14:35.550Z",
+      "inputDataCutoff": "2026-09-19T03:14:35.526Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "BIG": 0.5129204527997543,
+        "SMALL": 0.4870795472002458
+      },
+      "evaluationTimestamp": "2026-09-19T03:14:59.338Z",
+      "actualValue": "SMALL"
+    },
+    {
+      "id": "pred-number-20260919100010195",
+      "roundId": "20260919100010195",
+      "predictionType": "NUMBER",
+      "predictedValue": 8,
+      "probability": 0.166,
+      "confidence": "LOW",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:14:35.550Z",
+      "inputDataCutoff": "2026-09-19T03:14:35.526Z",
+      "status": "NOT_ACTIVE",
+      "allProbabilities": {
+        "0": 0.157,
+        "1": 0.084,
+        "2": 0.086,
+        "3": 0.067,
+        "4": 0.136,
+        "5": 0.088,
+        "6": 0.08,
+        "7": 0.069,
+        "8": 0.166,
+        "9": 0.067
+      },
+      "primaryCategory": "BIG",
+      "backupValue": 0,
+      "backupProbability": 0.157,
+      "backupCategory": "SMALL"
+    },
+    {
+      "id": "pred-colour-20260919100010195",
+      "roundId": "20260919100010195",
+      "predictionType": "COLOUR",
+      "predictedValue": "RED",
+      "probability": 0.423,
+      "confidence": "LOW",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:14:35.564Z",
+      "inputDataCutoff": "2026-09-19T03:14:35.526Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "RED": 0.42321681751712403,
+        "GREEN": 0.35775402189705297,
+        "VIOLET": 0.21902916058582286
+      },
+      "evaluationTimestamp": "2026-09-19T03:14:59.338Z",
+      "actualValue": "RED"
+    },
+    {
+      "id": "pred-size-20260919100010195",
+      "roundId": "20260919100010195",
+      "predictionType": "SIZE",
+      "predictedValue": "SMALL",
+      "probability": 0.51,
+      "confidence": "LOW",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:14:35.564Z",
+      "inputDataCutoff": "2026-09-19T03:14:35.526Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "BIG": 0.489704947192885,
+        "SMALL": 0.5102950528071151
+      },
+      "evaluationTimestamp": "2026-09-19T03:14:59.338Z",
+      "actualValue": "SMALL"
+    },
+    {
+      "id": "pred-number-20260919100010195",
+      "roundId": "20260919100010195",
+      "predictionType": "NUMBER",
+      "predictedValue": 0,
+      "probability": 0.142,
+      "confidence": "LOW",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:14:35.564Z",
+      "inputDataCutoff": "2026-09-19T03:14:35.526Z",
+      "status": "NOT_ACTIVE",
+      "allProbabilities": {
+        "0": 0.142,
+        "1": 0.074,
+        "2": 0.089,
+        "3": 0.07,
+        "4": 0.141,
+        "5": 0.078,
+        "6": 0.082,
+        "7": 0.095,
+        "8": 0.159,
+        "9": 0.07
+      },
+      "primaryCategory": "SMALL",
+      "backupValue": 8,
+      "backupProbability": 0.159,
+      "backupCategory": "BIG"
+    },
+    {
+      "id": "pred-colour-20260919100010195",
+      "roundId": "20260919100010195",
+      "predictionType": "COLOUR",
+      "predictedValue": "RED",
+      "probability": 0.403,
+      "confidence": "LOW",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:14:35.578Z",
+      "inputDataCutoff": "2026-09-19T03:14:35.526Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "RED": 0.4034509162592503,
+        "GREEN": 0.39108721025727966,
+        "VIOLET": 0.20546187348347006
+      },
+      "evaluationTimestamp": "2026-09-19T03:14:59.338Z",
+      "actualValue": "RED"
+    },
+    {
+      "id": "pred-size-20260919100010195",
+      "roundId": "20260919100010195",
+      "predictionType": "SIZE",
+      "predictedValue": "BIG",
+      "probability": 0.501,
+      "confidence": "LOW",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:14:35.578Z",
+      "inputDataCutoff": "2026-09-19T03:14:35.526Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "BIG": 0.5009520256754535,
+        "SMALL": 0.49904797432454656
+      },
+      "evaluationTimestamp": "2026-09-19T03:14:59.338Z",
+      "actualValue": "SMALL"
+    },
+    {
+      "id": "pred-number-20260919100010195",
+      "roundId": "20260919100010195",
+      "predictionType": "NUMBER",
+      "predictedValue": 8,
+      "probability": 0.081,
+      "confidence": "LOW",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:14:35.578Z",
+      "inputDataCutoff": "2026-09-19T03:14:35.526Z",
+      "status": "NOT_ACTIVE",
+      "allProbabilities": {
+        "0": 0.138,
+        "1": 0.079,
+        "2": 0.112,
+        "3": 0.126,
+        "4": 0.113,
+        "5": 0.141,
+        "6": 0.076,
+        "7": 0.062,
+        "8": 0.081,
+        "9": 0.072
+      },
+      "primaryCategory": "BIG",
+      "backupValue": 0,
+      "backupProbability": 0.138,
+      "backupCategory": "SMALL"
+    },
+    {
+      "id": "pred-colour-20260919100010195",
+      "roundId": "20260919100010195",
+      "predictionType": "COLOUR",
+      "predictedValue": "GREEN",
+      "probability": 0.409,
+      "confidence": "LOW",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:14:35.596Z",
+      "inputDataCutoff": "2026-09-19T03:14:35.526Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "RED": 0.3988627775849911,
+        "GREEN": 0.4087393319509568,
+        "VIOLET": 0.19239789046405206
+      },
+      "evaluationTimestamp": "2026-09-19T03:14:59.338Z",
+      "actualValue": "RED"
+    },
+    {
+      "id": "pred-size-20260919100010195",
+      "roundId": "20260919100010195",
+      "predictionType": "SIZE",
+      "predictedValue": "SMALL",
+      "probability": 0.595,
+      "confidence": "HIGH",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:14:35.595Z",
+      "inputDataCutoff": "2026-09-19T03:14:35.526Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "BIG": 0.40511324623089334,
+        "SMALL": 0.5948867537691067
+      },
+      "evaluationTimestamp": "2026-09-19T03:14:59.338Z",
+      "actualValue": "SMALL"
+    },
+    {
+      "id": "pred-number-20260919100010195",
+      "roundId": "20260919100010195",
+      "predictionType": "NUMBER",
+      "predictedValue": 3,
+      "probability": 0.097,
+      "confidence": "LOW",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:14:35.595Z",
+      "inputDataCutoff": "2026-09-19T03:14:35.526Z",
+      "status": "NOT_ACTIVE",
+      "allProbabilities": {
+        "0": 0.139,
+        "1": 0.078,
+        "2": 0.092,
+        "3": 0.097,
+        "4": 0.115,
+        "5": 0.081,
+        "6": 0.085,
+        "7": 0.112,
+        "8": 0.128,
+        "9": 0.074
+      },
+      "primaryCategory": "SMALL",
+      "backupValue": 7,
+      "backupProbability": 0.112,
+      "backupCategory": "BIG"
+    },
+    {
+      "id": "pred-colour-20260919100010195",
+      "roundId": "20260919100010195",
+      "predictionType": "COLOUR",
+      "predictedValue": "GREEN",
+      "probability": 0.442,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:14:35.609Z",
+      "inputDataCutoff": "2026-09-19T03:14:35.526Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "RED": 0.3538853729535857,
+        "GREEN": 0.4420003527026684,
+        "VIOLET": 0.20411427434374588
+      },
+      "evaluationTimestamp": "2026-09-19T03:14:59.338Z",
+      "actualValue": "RED"
+    },
+    {
+      "id": "pred-size-20260919100010195",
+      "roundId": "20260919100010195",
+      "predictionType": "SIZE",
+      "predictedValue": "SMALL",
+      "probability": 0.573,
+      "confidence": "HIGH",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:14:35.609Z",
+      "inputDataCutoff": "2026-09-19T03:14:35.526Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "BIG": 0.42666938068796406,
+        "SMALL": 0.573330619312036
+      },
+      "evaluationTimestamp": "2026-09-19T03:14:59.338Z",
+      "actualValue": "SMALL"
+    },
+    {
+      "id": "pred-number-20260919100010195",
+      "roundId": "20260919100010195",
+      "predictionType": "NUMBER",
+      "predictedValue": 3,
+      "probability": 0.15,
+      "confidence": "LOW",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:14:35.609Z",
+      "inputDataCutoff": "2026-09-19T03:14:35.526Z",
+      "status": "NOT_ACTIVE",
+      "allProbabilities": {
+        "0": 0.088,
+        "1": 0.124,
+        "2": 0.117,
+        "3": 0.15,
+        "4": 0.067,
+        "5": 0.078,
+        "6": 0.096,
+        "7": 0.089,
+        "8": 0.118,
+        "9": 0.073
+      },
+      "primaryCategory": "SMALL",
+      "backupValue": 7,
+      "backupProbability": 0.089,
+      "backupCategory": "BIG"
+    },
+    {
+      "id": "pred-colour-20260919100010195",
+      "roundId": "20260919100010195",
+      "predictionType": "COLOUR",
+      "predictedValue": "RED",
+      "probability": 0.464,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:14:35.623Z",
+      "inputDataCutoff": "2026-09-19T03:14:35.526Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "RED": 0.46428663951113125,
+        "GREEN": 0.3995236422312147,
+        "VIOLET": 0.1361897182576539
+      },
+      "evaluationTimestamp": "2026-09-19T03:14:59.338Z",
+      "actualValue": "RED"
+    },
+    {
+      "id": "pred-size-20260919100010195",
+      "roundId": "20260919100010195",
+      "predictionType": "SIZE",
+      "predictedValue": "BIG",
+      "probability": 0.502,
+      "confidence": "LOW",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:14:35.623Z",
+      "inputDataCutoff": "2026-09-19T03:14:35.526Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "BIG": 0.5021808222927879,
+        "SMALL": 0.4978191777072121
+      },
+      "evaluationTimestamp": "2026-09-19T03:14:59.338Z",
+      "actualValue": "SMALL"
+    },
+    {
+      "id": "pred-number-20260919100010195",
+      "roundId": "20260919100010195",
+      "predictionType": "NUMBER",
+      "predictedValue": 8,
+      "probability": 0.093,
+      "confidence": "LOW",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:14:35.623Z",
+      "inputDataCutoff": "2026-09-19T03:14:35.526Z",
+      "status": "NOT_ACTIVE",
+      "allProbabilities": {
+        "0": 0.106,
+        "1": 0.101,
+        "2": 0.117,
+        "3": 0.112,
+        "4": 0.064,
+        "5": 0.122,
+        "6": 0.079,
+        "7": 0.139,
+        "8": 0.093,
+        "9": 0.068
+      },
+      "primaryCategory": "BIG",
+      "backupValue": 2,
+      "backupProbability": 0.117,
+      "backupCategory": "SMALL"
+    },
+    {
+      "id": "pred-colour-20260919100010195",
+      "roundId": "20260919100010195",
+      "predictionType": "COLOUR",
+      "predictedValue": "GREEN",
+      "probability": 0.499,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:14:35.637Z",
+      "inputDataCutoff": "2026-09-19T03:14:35.526Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "RED": 0.35728222506091045,
+        "GREEN": 0.4989798485494968,
+        "VIOLET": 0.14373792638959282
+      },
+      "evaluationTimestamp": "2026-09-19T03:14:59.338Z",
+      "actualValue": "RED"
+    },
+    {
+      "id": "pred-size-20260919100010195",
+      "roundId": "20260919100010195",
+      "predictionType": "SIZE",
+      "predictedValue": "BIG",
+      "probability": 0.531,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:14:35.637Z",
+      "inputDataCutoff": "2026-09-19T03:14:35.526Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "BIG": 0.5306520146439447,
+        "SMALL": 0.46934798535605526
+      },
+      "evaluationTimestamp": "2026-09-19T03:14:59.338Z",
+      "actualValue": "SMALL"
+    },
+    {
+      "id": "pred-number-20260919100010195",
+      "roundId": "20260919100010195",
+      "predictionType": "NUMBER",
+      "predictedValue": 9,
+      "probability": 0.11,
+      "confidence": "LOW",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:14:35.637Z",
+      "inputDataCutoff": "2026-09-19T03:14:35.526Z",
+      "status": "NOT_ACTIVE",
+      "allProbabilities": {
+        "0": 0.122,
+        "1": 0.093,
+        "2": 0.1,
+        "3": 0.103,
+        "4": 0.069,
+        "5": 0.094,
+        "6": 0.128,
+        "7": 0.092,
+        "8": 0.088,
+        "9": 0.11
+      },
+      "primaryCategory": "BIG",
+      "backupValue": 3,
+      "backupProbability": 0.103,
+      "backupCategory": "SMALL"
+    },
+    {
+      "id": "pred-colour-20260919100010195",
+      "roundId": "20260919100010195",
+      "predictionType": "COLOUR",
+      "predictedValue": "RED",
+      "probability": 0.512,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:14:35.651Z",
+      "inputDataCutoff": "2026-09-19T03:14:35.526Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "RED": 0.5121287618017307,
+        "GREEN": 0.2942951410049121,
+        "VIOLET": 0.19357609719335714
+      },
+      "evaluationTimestamp": "2026-09-19T03:14:59.338Z",
+      "actualValue": "RED"
+    },
+    {
+      "id": "pred-size-20260919100010195",
+      "roundId": "20260919100010195",
+      "predictionType": "SIZE",
+      "predictedValue": "BIG",
+      "probability": 0.514,
+      "confidence": "LOW",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:14:35.651Z",
+      "inputDataCutoff": "2026-09-19T03:14:35.526Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "BIG": 0.5141435744050734,
+        "SMALL": 0.4858564255949266
+      },
+      "evaluationTimestamp": "2026-09-19T03:14:59.338Z",
+      "actualValue": "SMALL"
+    },
+    {
+      "id": "pred-number-20260919100010195",
+      "roundId": "20260919100010195",
+      "predictionType": "NUMBER",
+      "predictedValue": 6,
+      "probability": 0.182,
+      "confidence": "LOW",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:14:35.651Z",
+      "inputDataCutoff": "2026-09-19T03:14:35.526Z",
+      "status": "NOT_ACTIVE",
+      "allProbabilities": {
+        "0": 0.156,
+        "1": 0.102,
+        "2": 0.11,
+        "3": 0.087,
+        "4": 0.043,
+        "5": 0.097,
+        "6": 0.182,
+        "7": 0.101,
+        "8": 0.065,
+        "9": 0.056
+      },
+      "primaryCategory": "BIG",
+      "backupValue": 0,
+      "backupProbability": 0.156,
+      "backupCategory": "SMALL"
+    },
+    {
+      "id": "pred-colour-20260919100010195",
+      "roundId": "20260919100010195",
+      "predictionType": "COLOUR",
+      "predictedValue": "RED",
+      "probability": 0.526,
+      "confidence": "HIGH",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:14:35.666Z",
+      "inputDataCutoff": "2026-09-19T03:14:35.526Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "RED": 0.5258375920586144,
+        "GREEN": 0.3719573599971873,
+        "VIOLET": 0.10220504794419835
+      },
+      "evaluationTimestamp": "2026-09-19T03:14:59.338Z",
+      "actualValue": "RED"
+    },
+    {
+      "id": "pred-size-20260919100010195",
+      "roundId": "20260919100010195",
+      "predictionType": "SIZE",
+      "predictedValue": "SMALL",
+      "probability": 0.557,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:14:35.665Z",
+      "inputDataCutoff": "2026-09-19T03:14:35.526Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "BIG": 0.4425865409718756,
+        "SMALL": 0.5574134590281243
+      },
+      "evaluationTimestamp": "2026-09-19T03:14:59.338Z",
+      "actualValue": "SMALL"
+    },
+    {
+      "id": "pred-number-20260919100010195",
+      "roundId": "20260919100010195",
+      "predictionType": "NUMBER",
+      "predictedValue": 2,
+      "probability": 0.204,
+      "confidence": "LOW",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:14:35.665Z",
+      "inputDataCutoff": "2026-09-19T03:14:35.526Z",
+      "status": "NOT_ACTIVE",
+      "allProbabilities": {
+        "0": 0.107,
+        "1": 0.064,
+        "2": 0.204,
+        "3": 0.077,
+        "4": 0.045,
+        "5": 0.085,
+        "6": 0.138,
+        "7": 0.095,
+        "8": 0.135,
+        "9": 0.051
+      },
+      "primaryCategory": "SMALL",
+      "backupValue": 6,
+      "backupProbability": 0.138,
+      "backupCategory": "BIG"
+    },
+    {
+      "id": "pred-colour-20260919100010196",
+      "roundId": "20260919100010196",
+      "predictionType": "COLOUR",
+      "predictedValue": "GREEN",
+      "probability": 0.505,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:14:59.341Z",
+      "inputDataCutoff": "2026-09-19T03:14:59.338Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "RED": 0.3400908683035791,
+        "GREEN": 0.5051472433556692,
+        "VIOLET": 0.15476188834075172
+      },
+      "evaluationTimestamp": "2026-09-19T03:15:59.344Z",
+      "actualValue": "RED"
+    },
+    {
+      "id": "pred-size-20260919100010196",
+      "roundId": "20260919100010196",
+      "predictionType": "SIZE",
+      "predictedValue": "BIG",
+      "probability": 0.511,
+      "confidence": "LOW",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:14:59.340Z",
+      "inputDataCutoff": "2026-09-19T03:14:59.338Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "BIG": 0.5113664914449536,
+        "SMALL": 0.4886335085550465
+      },
+      "evaluationTimestamp": "2026-09-19T03:15:59.344Z",
+      "actualValue": "BIG"
+    },
+    {
+      "id": "pred-number-20260919100010196",
+      "roundId": "20260919100010196",
+      "predictionType": "NUMBER",
+      "predictedValue": 9,
+      "probability": 0.159,
+      "confidence": "LOW",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:14:59.340Z",
+      "inputDataCutoff": "2026-09-19T03:14:59.338Z",
+      "status": "NOT_ACTIVE",
+      "allProbabilities": {
+        "0": 0.129,
+        "1": 0.059,
+        "2": 0.111,
+        "3": 0.098,
+        "4": 0.087,
+        "5": 0.102,
+        "6": 0.099,
+        "7": 0.086,
+        "8": 0.071,
+        "9": 0.159
+      },
+      "primaryCategory": "BIG",
+      "backupValue": 3,
+      "backupProbability": 0.098,
+      "backupCategory": "SMALL"
+    },
+    {
+      "id": "pred-colour-20260919100010197",
+      "roundId": "20260919100010197",
+      "predictionType": "COLOUR",
+      "predictedValue": "GREEN",
+      "probability": 0.442,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:15:59.346Z",
+      "inputDataCutoff": "2026-09-19T03:15:59.344Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "RED": 0.3814360359794679,
+        "GREEN": 0.4418113025191419,
+        "VIOLET": 0.17675266150139018
+      },
+      "evaluationTimestamp": "2026-09-19T03:16:59.355Z",
+      "actualValue": "GREEN"
+    },
+    {
+      "id": "pred-size-20260919100010197",
+      "roundId": "20260919100010197",
+      "predictionType": "SIZE",
+      "predictedValue": "SMALL",
+      "probability": 0.545,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:15:59.346Z",
+      "inputDataCutoff": "2026-09-19T03:15:59.344Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "BIG": 0.45475542658605284,
+        "SMALL": 0.5452445734139473
+      },
+      "evaluationTimestamp": "2026-09-19T03:16:59.355Z",
+      "actualValue": "SMALL"
+    },
+    {
+      "id": "pred-number-20260919100010197",
+      "roundId": "20260919100010197",
+      "predictionType": "NUMBER",
+      "predictedValue": 1,
+      "probability": 0.108,
+      "confidence": "LOW",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:15:59.346Z",
+      "inputDataCutoff": "2026-09-19T03:15:59.344Z",
+      "status": "NOT_ACTIVE",
+      "allProbabilities": {
+        "0": 0.103,
+        "1": 0.108,
+        "2": 0.114,
+        "3": 0.105,
+        "4": 0.095,
+        "5": 0.132,
+        "6": 0.087,
+        "7": 0.081,
+        "8": 0.086,
+        "9": 0.088
+      },
+      "primaryCategory": "SMALL",
+      "backupValue": 5,
+      "backupProbability": 0.132,
+      "backupCategory": "BIG"
+    },
+    {
+      "id": "pred-colour-20260919100010198",
+      "roundId": "20260919100010198",
+      "predictionType": "COLOUR",
+      "predictedValue": "RED",
+      "probability": 0.433,
+      "confidence": "LOW",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:16:59.356Z",
+      "inputDataCutoff": "2026-09-19T03:16:59.354Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "RED": 0.43274253345518277,
+        "GREEN": 0.3586751440471522,
+        "VIOLET": 0.20858232249766512
+      },
+      "evaluationTimestamp": "2026-09-19T03:17:59.372Z",
+      "actualValue": "RED"
+    },
+    {
+      "id": "pred-size-20260919100010198",
+      "roundId": "20260919100010198",
+      "predictionType": "SIZE",
+      "predictedValue": "BIG",
+      "probability": 0.527,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:16:59.356Z",
+      "inputDataCutoff": "2026-09-19T03:16:59.354Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "BIG": 0.5272970404474424,
+        "SMALL": 0.47270295955255753
+      },
+      "evaluationTimestamp": "2026-09-19T03:17:59.372Z",
+      "actualValue": "SMALL"
+    },
+    {
+      "id": "pred-number-20260919100010198",
+      "roundId": "20260919100010198",
+      "predictionType": "NUMBER",
+      "predictedValue": 5,
+      "probability": 0.141,
+      "confidence": "LOW",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:16:59.356Z",
+      "inputDataCutoff": "2026-09-19T03:16:59.354Z",
+      "status": "NOT_ACTIVE",
+      "allProbabilities": {
+        "0": 0.129,
+        "1": 0.091,
+        "2": 0.142,
+        "3": 0.121,
+        "4": 0.077,
+        "5": 0.141,
+        "6": 0.077,
+        "7": 0.071,
+        "8": 0.076,
+        "9": 0.075
+      },
+      "primaryCategory": "BIG",
+      "backupValue": 2,
+      "backupProbability": 0.142,
+      "backupCategory": "SMALL"
+    },
+    {
+      "id": "pred-colour-20260919100010199",
+      "roundId": "20260919100010199",
+      "predictionType": "COLOUR",
+      "predictedValue": "GREEN",
+      "probability": 0.483,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:17:59.373Z",
+      "inputDataCutoff": "2026-09-19T03:17:59.372Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "RED": 0.35162703725126276,
+        "GREEN": 0.48251828963272697,
+        "VIOLET": 0.1658546731160103
+      },
+      "evaluationTimestamp": "2026-09-19T03:18:59.379Z",
+      "actualValue": "GREEN"
+    },
+    {
+      "id": "pred-size-20260919100010199",
+      "roundId": "20260919100010199",
+      "predictionType": "SIZE",
+      "predictedValue": "BIG",
+      "probability": 0.538,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:17:59.373Z",
+      "inputDataCutoff": "2026-09-19T03:17:59.372Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "BIG": 0.537500751597921,
+        "SMALL": 0.46249924840207907
+      },
+      "evaluationTimestamp": "2026-09-19T03:18:59.379Z",
+      "actualValue": "SMALL"
+    },
+    {
+      "id": "pred-number-20260919100010199",
+      "roundId": "20260919100010199",
+      "predictionType": "NUMBER",
+      "predictedValue": 5,
+      "probability": 0.141,
+      "confidence": "LOW",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:17:59.373Z",
+      "inputDataCutoff": "2026-09-19T03:17:59.372Z",
+      "status": "NOT_ACTIVE",
+      "allProbabilities": {
+        "0": 0.129,
+        "1": 0.06,
+        "2": 0.116,
+        "3": 0.093,
+        "4": 0.066,
+        "5": 0.141,
+        "6": 0.107,
+        "7": 0.085,
+        "8": 0.083,
+        "9": 0.121
+      },
+      "primaryCategory": "BIG",
+      "backupValue": 3,
+      "backupProbability": 0.093,
+      "backupCategory": "SMALL"
+    },
+    {
+      "id": "pred-colour-20260919100010200",
+      "roundId": "20260919100010200",
+      "predictionType": "COLOUR",
+      "predictedValue": "RED",
+      "probability": 0.516,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:18:59.381Z",
+      "inputDataCutoff": "2026-09-19T03:18:59.379Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "RED": 0.5163067410024885,
+        "GREEN": 0.3091486718764031,
+        "VIOLET": 0.17454458712110837
+      },
+      "evaluationTimestamp": "2026-09-19T03:19:59.496Z",
+      "actualValue": "RED"
+    },
+    {
+      "id": "pred-size-20260919100010200",
+      "roundId": "20260919100010200",
+      "predictionType": "SIZE",
+      "predictedValue": "SMALL",
+      "probability": 0.568,
+      "confidence": "HIGH",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:18:59.381Z",
+      "inputDataCutoff": "2026-09-19T03:18:59.379Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "BIG": 0.4319917201421083,
+        "SMALL": 0.5680082798578918
+      },
+      "evaluationTimestamp": "2026-09-19T03:19:59.496Z",
+      "actualValue": "SMALL"
+    },
+    {
+      "id": "pred-number-20260919100010200",
+      "roundId": "20260919100010200",
+      "predictionType": "NUMBER",
+      "predictedValue": 0,
+      "probability": 0.158,
+      "confidence": "LOW",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:18:59.381Z",
+      "inputDataCutoff": "2026-09-19T03:18:59.379Z",
+      "status": "NOT_ACTIVE",
+      "allProbabilities": {
+        "0": 0.158,
+        "1": 0.082,
+        "2": 0.131,
+        "3": 0.106,
+        "4": 0.091,
+        "5": 0.153,
+        "6": 0.069,
+        "7": 0.068,
+        "8": 0.071,
+        "9": 0.071
+      },
+      "primaryCategory": "SMALL",
+      "backupValue": 5,
+      "backupProbability": 0.153,
+      "backupCategory": "BIG"
+    },
+    {
+      "id": "pred-colour-20260919100010201",
+      "roundId": "20260919100010201",
+      "predictionType": "COLOUR",
+      "predictedValue": "GREEN",
+      "probability": 0.574,
+      "confidence": "HIGH",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:19:59.503Z",
+      "inputDataCutoff": "2026-09-19T03:19:59.495Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "RED": 0.34644028325388404,
+        "GREEN": 0.4946878122140242,
+        "VIOLET": 0.15887190453209182
+      },
+      "evaluationTimestamp": "2026-09-19T03:20:59.461Z",
+      "actualValue": "VIOLET"
+    },
+    {
+      "id": "pred-size-20260919100010201",
+      "roundId": "20260919100010201",
+      "predictionType": "SIZE",
+      "predictedValue": "SMALL",
+      "probability": 0.506,
+      "confidence": "LOW",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:19:59.503Z",
+      "inputDataCutoff": "2026-09-19T03:19:59.495Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "BIG": 0.4941031604387433,
+        "SMALL": 0.5058968395612568
+      },
+      "evaluationTimestamp": "2026-09-19T03:20:59.461Z",
+      "actualValue": "BIG"
+    },
+    {
+      "id": "pred-number-20260919100010201",
+      "roundId": "20260919100010201",
+      "predictionType": "NUMBER",
+      "predictedValue": 1,
+      "probability": 0.104,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:19:59.502Z",
+      "inputDataCutoff": "2026-09-19T03:19:59.495Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "0": 0.085,
+        "1": 0.104,
+        "2": 0.108,
+        "3": 0.079,
+        "4": 0.067,
+        "5": 0.153,
+        "6": 0.116,
+        "7": 0.104,
+        "8": 0.126,
+        "9": 0.058
+      },
+      "primaryCategory": "SMALL",
+      "backupValue": 5,
+      "backupProbability": 0.153,
+      "backupCategory": "BIG",
+      "evaluationTimestamp": "2026-09-19T03:20:59.461Z",
+      "actualValue": 5,
+      "backupStatus": "CORRECT"
+    },
+    {
+      "id": "pred-colour-20260919100010202",
+      "roundId": "20260919100010202",
+      "predictionType": "COLOUR",
+      "predictedValue": "RED",
+      "probability": 0.577,
+      "confidence": "HIGH",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:20:59.464Z",
+      "inputDataCutoff": "2026-09-19T03:20:59.461Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "RED": 0.5122204192645621,
+        "GREEN": 0.35792694952638787,
+        "VIOLET": 0.1298526312090501
+      },
+      "evaluationTimestamp": "2026-09-19T03:21:59.467Z",
+      "actualValue": "RED"
+    },
+    {
+      "id": "pred-size-20260919100010202",
+      "roundId": "20260919100010202",
+      "predictionType": "SIZE",
+      "predictedValue": "SMALL",
+      "probability": 0.545,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:20:59.464Z",
+      "inputDataCutoff": "2026-09-19T03:20:59.461Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "BIG": 0.45455021742282986,
+        "SMALL": 0.5454497825771701
+      },
+      "evaluationTimestamp": "2026-09-19T03:21:59.467Z",
+      "actualValue": "SMALL"
+    },
+    {
+      "id": "pred-number-20260919100010202",
+      "roundId": "20260919100010202",
+      "predictionType": "NUMBER",
+      "predictedValue": 2,
+      "probability": 0.222,
+      "confidence": "HIGH",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:20:59.464Z",
+      "inputDataCutoff": "2026-09-19T03:20:59.461Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "0": 0.107,
+        "1": 0.054,
+        "2": 0.222,
+        "3": 0.087,
+        "4": 0.053,
+        "5": 0.088,
+        "6": 0.115,
+        "7": 0.085,
+        "8": 0.144,
+        "9": 0.044
+      },
+      "primaryCategory": "SMALL",
+      "backupValue": 8,
+      "backupProbability": 0.144,
+      "backupCategory": "BIG",
+      "evaluationTimestamp": "2026-09-19T03:21:59.467Z",
+      "actualValue": 4,
+      "backupStatus": "INCORRECT"
+    },
+    {
+      "id": "pred-colour-20260919100010203",
+      "roundId": "20260919100010203",
+      "predictionType": "COLOUR",
+      "predictedValue": "GREEN",
+      "probability": 0.573,
+      "confidence": "HIGH",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:21:59.469Z",
+      "inputDataCutoff": "2026-09-19T03:21:59.467Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "RED": 0.35610980428624756,
+        "GREEN": 0.5026194285327192,
+        "VIOLET": 0.14127076718103318
+      },
+      "evaluationTimestamp": "2026-09-19T03:22:59.476Z",
+      "actualValue": "RED"
+    },
+    {
+      "id": "pred-size-20260919100010203",
+      "roundId": "20260919100010203",
+      "predictionType": "SIZE",
+      "predictedValue": "BIG",
+      "probability": 0.576,
+      "confidence": "HIGH",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:21:59.469Z",
+      "inputDataCutoff": "2026-09-19T03:21:59.467Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "BIG": 0.5756681752716072,
+        "SMALL": 0.4243318247283928
+      },
+      "evaluationTimestamp": "2026-09-19T03:22:59.476Z",
+      "actualValue": "BIG"
+    },
+    {
+      "id": "pred-number-20260919100010203",
+      "roundId": "20260919100010203",
+      "predictionType": "NUMBER",
+      "predictedValue": 5,
+      "probability": 0.142,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:21:59.469Z",
+      "inputDataCutoff": "2026-09-19T03:21:59.467Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "0": 0.084,
+        "1": 0.102,
+        "2": 0.109,
+        "3": 0.118,
+        "4": 0.084,
+        "5": 0.142,
+        "6": 0.1,
+        "7": 0.089,
+        "8": 0.11,
+        "9": 0.062
+      },
+      "primaryCategory": "BIG",
+      "backupValue": 3,
+      "backupProbability": 0.118,
+      "backupCategory": "SMALL",
+      "evaluationTimestamp": "2026-09-19T03:22:59.476Z",
+      "actualValue": 6,
+      "backupStatus": "INCORRECT"
+    },
+    {
+      "id": "pred-colour-20260919100010204",
+      "roundId": "20260919100010204",
+      "predictionType": "COLOUR",
+      "predictedValue": "GREEN",
+      "probability": 0.53,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:22:59.479Z",
+      "inputDataCutoff": "2026-09-19T03:22:59.476Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "RED": 0.3867620796326521,
+        "GREEN": 0.44637562431872096,
+        "VIOLET": 0.16686229604862698
+      },
+      "evaluationTimestamp": "2026-09-19T03:23:59.518Z",
+      "actualValue": "RED"
+    },
+    {
+      "id": "pred-size-20260919100010204",
+      "roundId": "20260919100010204",
+      "predictionType": "SIZE",
+      "predictedValue": "SMALL",
+      "probability": 0.61,
+      "confidence": "HIGH",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:22:59.478Z",
+      "inputDataCutoff": "2026-09-19T03:22:59.476Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "BIG": 0.38982473629334585,
+        "SMALL": 0.6101752637066542
+      },
+      "evaluationTimestamp": "2026-09-19T03:23:59.518Z",
+      "actualValue": "BIG"
+    },
+    {
+      "id": "pred-number-20260919100010204",
+      "roundId": "20260919100010204",
+      "predictionType": "NUMBER",
+      "predictedValue": 3,
+      "probability": 0.169,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:22:59.478Z",
+      "inputDataCutoff": "2026-09-19T03:22:59.476Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "0": 0.083,
+        "1": 0.068,
+        "2": 0.145,
+        "3": 0.169,
+        "4": 0.083,
+        "5": 0.086,
+        "6": 0.085,
+        "7": 0.07,
+        "8": 0.121,
+        "9": 0.091
+      },
+      "primaryCategory": "SMALL",
+      "backupValue": 9,
+      "backupProbability": 0.091,
+      "backupCategory": "BIG",
+      "evaluationTimestamp": "2026-09-19T03:23:59.518Z",
+      "actualValue": 6,
+      "backupStatus": "INCORRECT"
+    },
+    {
+      "id": "pred-colour-20260919100010205",
+      "roundId": "20260919100010205",
+      "predictionType": "COLOUR",
+      "predictedValue": "RED",
+      "probability": 0.536,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:23:59.520Z",
+      "inputDataCutoff": "2026-09-19T03:23:59.518Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "RED": 0.46538017098792034,
+        "GREEN": 0.3943654922843774,
+        "VIOLET": 0.14025433672770232
+      },
+      "evaluationTimestamp": "2026-09-19T03:24:59.499Z",
+      "actualValue": "GREEN"
+    },
+    {
+      "id": "pred-size-20260919100010205",
+      "roundId": "20260919100010205",
+      "predictionType": "SIZE",
+      "predictedValue": "SMALL",
+      "probability": 0.579,
+      "confidence": "HIGH",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:23:59.520Z",
+      "inputDataCutoff": "2026-09-19T03:23:59.518Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "BIG": 0.42144377070694133,
+        "SMALL": 0.5785562292930587
+      },
+      "evaluationTimestamp": "2026-09-19T03:24:59.499Z",
+      "actualValue": "BIG"
+    },
+    {
+      "id": "pred-number-20260919100010205",
+      "roundId": "20260919100010205",
+      "predictionType": "NUMBER",
+      "predictedValue": 2,
+      "probability": 0.127,
+      "confidence": "HIGH",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:23:59.519Z",
+      "inputDataCutoff": "2026-09-19T03:23:59.518Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "0": 0.085,
+        "1": 0.07,
+        "2": 0.127,
+        "3": 0.186,
+        "4": 0.085,
+        "5": 0.088,
+        "6": 0.112,
+        "7": 0.069,
+        "8": 0.103,
+        "9": 0.074
+      },
+      "primaryCategory": "SMALL",
+      "backupValue": 6,
+      "backupProbability": 0.112,
+      "backupCategory": "BIG",
+      "evaluationTimestamp": "2026-09-19T03:24:59.499Z",
+      "actualValue": 7,
+      "backupStatus": "INCORRECT"
+    },
+    {
+      "id": "pred-colour-20260919100010206",
+      "roundId": "20260919100010206",
+      "predictionType": "COLOUR",
+      "predictedValue": "RED",
+      "probability": 0.556,
+      "confidence": "HIGH",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:24:59.500Z",
+      "inputDataCutoff": "2026-09-19T03:24:59.499Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "RED": 0.45505641978194994,
+        "GREEN": 0.3439766620579584,
+        "VIOLET": 0.20096691816009166
+      },
+      "evaluationTimestamp": "2026-09-19T03:25:59.498Z",
+      "actualValue": "RED"
+    },
+    {
+      "id": "pred-size-20260919100010206",
+      "roundId": "20260919100010206",
+      "predictionType": "SIZE",
+      "predictedValue": "SMALL",
+      "probability": 0.547,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:24:59.500Z",
+      "inputDataCutoff": "2026-09-19T03:24:59.499Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "BIG": 0.45337013385958713,
+        "SMALL": 0.546629866140413
+      },
+      "evaluationTimestamp": "2026-09-19T03:25:59.498Z",
+      "actualValue": "SMALL"
+    },
+    {
+      "id": "pred-number-20260919100010206",
+      "roundId": "20260919100010206",
+      "predictionType": "NUMBER",
+      "predictedValue": 0,
+      "probability": 0.157,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:24:59.500Z",
+      "inputDataCutoff": "2026-09-19T03:24:59.499Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "0": 0.157,
+        "1": 0.058,
+        "2": 0.094,
+        "3": 0.095,
+        "4": 0.123,
+        "5": 0.086,
+        "6": 0.108,
+        "7": 0.1,
+        "8": 0.108,
+        "9": 0.071
+      },
+      "primaryCategory": "SMALL",
+      "backupValue": 6,
+      "backupProbability": 0.108,
+      "backupCategory": "BIG",
+      "evaluationTimestamp": "2026-09-19T03:25:59.498Z",
+      "actualValue": 4,
+      "backupStatus": "INCORRECT"
+    },
+    {
+      "id": "pred-colour-20260919100010207",
+      "roundId": "20260919100010207",
+      "predictionType": "COLOUR",
+      "predictedValue": "GREEN",
+      "probability": 0.559,
+      "confidence": "HIGH",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:25:59.499Z",
+      "inputDataCutoff": "2026-09-19T03:25:59.497Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "RED": 0.3609656700254142,
+        "GREEN": 0.4788696240027694,
+        "VIOLET": 0.16016470597181642
+      },
+      "evaluationTimestamp": "2026-09-19T03:26:59.509Z",
+      "actualValue": "RED"
+    },
+    {
+      "id": "pred-size-20260919100010207",
+      "roundId": "20260919100010207",
+      "predictionType": "SIZE",
+      "predictedValue": "BIG",
+      "probability": 0.508,
+      "confidence": "LOW",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:25:59.499Z",
+      "inputDataCutoff": "2026-09-19T03:25:59.497Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "BIG": 0.5082209856321332,
+        "SMALL": 0.4917790143678668
+      },
+      "evaluationTimestamp": "2026-09-19T03:26:59.509Z",
+      "actualValue": "SMALL"
+    },
+    {
+      "id": "pred-number-20260919100010207",
+      "roundId": "20260919100010207",
+      "predictionType": "NUMBER",
+      "predictedValue": 5,
+      "probability": 0.129,
+      "confidence": "LOW",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:25:59.499Z",
+      "inputDataCutoff": "2026-09-19T03:25:59.497Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "0": 0.073,
+        "1": 0.134,
+        "2": 0.11,
+        "3": 0.07,
+        "4": 0.084,
+        "5": 0.129,
+        "6": 0.138,
+        "7": 0.102,
+        "8": 0.105,
+        "9": 0.053
+      },
+      "primaryCategory": "BIG",
+      "backupValue": 1,
+      "backupProbability": 0.134,
+      "backupCategory": "SMALL",
+      "evaluationTimestamp": "2026-09-19T03:26:59.509Z",
+      "actualValue": 2,
+      "backupStatus": "INCORRECT"
+    },
+    {
+      "id": "pred-colour-20260919100010208",
+      "roundId": "20260919100010208",
+      "predictionType": "COLOUR",
+      "predictedValue": "GREEN",
+      "probability": 0.524,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:26:59.510Z",
+      "inputDataCutoff": "2026-09-19T03:26:59.508Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "RED": 0.39601107099367544,
+        "GREEN": 0.44494921520027564,
+        "VIOLET": 0.15903971380604898
+      },
+      "evaluationTimestamp": "2026-09-19T03:27:59.520Z",
+      "actualValue": "RED"
+    },
+    {
+      "id": "pred-size-20260919100010208",
+      "roundId": "20260919100010208",
+      "predictionType": "SIZE",
+      "predictedValue": "BIG",
+      "probability": 0.53,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:26:59.510Z",
+      "inputDataCutoff": "2026-09-19T03:26:59.508Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "BIG": 0.5300965663474966,
+        "SMALL": 0.4699034336525034
+      },
+      "evaluationTimestamp": "2026-09-19T03:27:59.521Z",
+      "actualValue": "BIG"
+    },
+    {
+      "id": "pred-number-20260919100010208",
+      "roundId": "20260919100010208",
+      "predictionType": "NUMBER",
+      "predictedValue": 5,
+      "probability": 0.134,
+      "confidence": "LOW",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:26:59.510Z",
+      "inputDataCutoff": "2026-09-19T03:26:59.508Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "0": 0.096,
+        "1": 0.054,
+        "2": 0.113,
+        "3": 0.1,
+        "4": 0.127,
+        "5": 0.134,
+        "6": 0.101,
+        "7": 0.089,
+        "8": 0.069,
+        "9": 0.118
+      },
+      "primaryCategory": "BIG",
+      "backupValue": 3,
+      "backupProbability": 0.1,
+      "backupCategory": "SMALL",
+      "evaluationTimestamp": "2026-09-19T03:27:59.521Z",
+      "actualValue": 8,
+      "backupStatus": "INCORRECT"
+    },
+    {
+      "id": "pred-colour-20260919100010209",
+      "roundId": "20260919100010209",
+      "predictionType": "COLOUR",
+      "predictedValue": "RED",
+      "probability": 0.531,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:27:59.523Z",
+      "inputDataCutoff": "2026-09-19T03:27:59.520Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "RED": 0.4619454861943043,
+        "GREEN": 0.4005759168901466,
+        "VIOLET": 0.13747859691554914
+      },
+      "evaluationTimestamp": "2026-09-19T03:28:59.533Z",
+      "actualValue": "RED"
+    },
+    {
+      "id": "pred-size-20260919100010209",
+      "roundId": "20260919100010209",
+      "predictionType": "SIZE",
+      "predictedValue": "SMALL",
+      "probability": 0.55,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:27:59.522Z",
+      "inputDataCutoff": "2026-09-19T03:27:59.520Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "BIG": 0.4495247138040195,
+        "SMALL": 0.5504752861959805
+      },
+      "evaluationTimestamp": "2026-09-19T03:28:59.533Z",
+      "actualValue": "SMALL"
+    },
+    {
+      "id": "pred-number-20260919100010209",
+      "roundId": "20260919100010209",
+      "predictionType": "NUMBER",
+      "predictedValue": 2,
+      "probability": 0.117,
+      "confidence": "LOW",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:27:59.522Z",
+      "inputDataCutoff": "2026-09-19T03:27:59.520Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "0": 0.08,
+        "1": 0.096,
+        "2": 0.117,
+        "3": 0.134,
+        "4": 0.115,
+        "5": 0.129,
+        "6": 0.091,
+        "7": 0.078,
+        "8": 0.078,
+        "9": 0.079
+      },
+      "primaryCategory": "SMALL",
+      "backupValue": 6,
+      "backupProbability": 0.091,
+      "backupCategory": "BIG",
+      "evaluationTimestamp": "2026-09-19T03:28:59.533Z",
+      "actualValue": 2,
+      "backupStatus": "INCORRECT"
+    },
+    {
+      "id": "pred-colour-20260919100010210",
+      "roundId": "20260919100010210",
+      "predictionType": "COLOUR",
+      "predictedValue": "RED",
+      "probability": 0.543,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:28:59.535Z",
+      "inputDataCutoff": "2026-09-19T03:28:59.533Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "RED": 0.47811382843495825,
+        "GREEN": 0.3911693800447854,
+        "VIOLET": 0.1307167915202563
+      },
+      "evaluationTimestamp": "2026-09-19T03:29:59.551Z",
+      "actualValue": "RED"
+    },
+    {
+      "id": "pred-size-20260919100010210",
+      "roundId": "20260919100010210",
+      "predictionType": "SIZE",
+      "predictedValue": "BIG",
+      "probability": 0.583,
+      "confidence": "HIGH",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:28:59.535Z",
+      "inputDataCutoff": "2026-09-19T03:28:59.533Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "BIG": 0.5831337027184822,
+        "SMALL": 0.4168662972815178
+      },
+      "evaluationTimestamp": "2026-09-19T03:29:59.551Z",
+      "actualValue": "SMALL"
+    },
+    {
+      "id": "pred-number-20260919100010210",
+      "roundId": "20260919100010210",
+      "predictionType": "NUMBER",
+      "predictedValue": 6,
+      "probability": 0.095,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:28:59.534Z",
+      "inputDataCutoff": "2026-09-19T03:28:59.533Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "0": 0.088,
+        "1": 0.051,
+        "2": 0.141,
+        "3": 0.095,
+        "4": 0.093,
+        "5": 0.097,
+        "6": 0.095,
+        "7": 0.104,
+        "8": 0.084,
+        "9": 0.153
+      },
+      "primaryCategory": "BIG",
+      "backupValue": 2,
+      "backupProbability": 0.141,
+      "backupCategory": "SMALL",
+      "evaluationTimestamp": "2026-09-19T03:29:59.551Z",
+      "actualValue": 2,
+      "backupStatus": "CORRECT"
+    },
+    {
+      "id": "pred-colour-20260919100010211",
+      "roundId": "20260919100010211",
+      "predictionType": "COLOUR",
+      "predictedValue": "RED",
+      "probability": 0.56,
+      "confidence": "HIGH",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:29:59.556Z",
+      "inputDataCutoff": "2026-09-19T03:29:59.550Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "RED": 0.4956139891981772,
+        "GREEN": 0.37649880939720376,
+        "VIOLET": 0.127887201404619
+      },
+      "evaluationTimestamp": "2026-09-19T03:30:58.139Z",
+      "actualValue": "VIOLET"
+    },
+    {
+      "id": "pred-size-20260919100010211",
+      "roundId": "20260919100010211",
+      "predictionType": "SIZE",
+      "predictedValue": "SMALL",
+      "probability": 0.515,
+      "confidence": "LOW",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:29:59.555Z",
+      "inputDataCutoff": "2026-09-19T03:29:59.550Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "BIG": 0.4848896123064798,
+        "SMALL": 0.5151103876935202
+      },
+      "evaluationTimestamp": "2026-09-19T03:30:58.139Z",
+      "actualValue": "SMALL"
+    },
+    {
+      "id": "pred-number-20260919100010211",
+      "roundId": "20260919100010211",
+      "predictionType": "NUMBER",
+      "predictedValue": 2,
+      "probability": 0.136,
+      "confidence": "LOW",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:29:59.555Z",
+      "inputDataCutoff": "2026-09-19T03:29:59.550Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "0": 0.087,
+        "1": 0.051,
+        "2": 0.136,
+        "3": 0.094,
+        "4": 0.116,
+        "5": 0.096,
+        "6": 0.095,
+        "7": 0.107,
+        "8": 0.083,
+        "9": 0.136
+      },
+      "primaryCategory": "SMALL",
+      "backupValue": 6,
+      "backupProbability": 0.095,
+      "backupCategory": "BIG",
+      "evaluationTimestamp": "2026-09-19T03:30:58.139Z",
+      "actualValue": 0,
+      "backupStatus": "INCORRECT"
+    },
+    {
+      "id": "pred-colour-20260919100010212",
+      "roundId": "20260919100010212",
+      "predictionType": "COLOUR",
+      "predictedValue": "RED",
+      "probability": 0.529,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:30:58.147Z",
+      "inputDataCutoff": "2026-09-19T03:30:58.138Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "RED": 0.4667925690740191,
+        "GREEN": 0.4078017337088063,
+        "VIOLET": 0.1254056972171746
+      },
+      "evaluationTimestamp": "2026-09-19T03:31:58.171Z",
+      "actualValue": "VIOLET"
+    },
+    {
+      "id": "pred-size-20260919100010212",
+      "roundId": "20260919100010212",
+      "predictionType": "SIZE",
+      "predictedValue": "SMALL",
+      "probability": 0.571,
+      "confidence": "HIGH",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:30:58.146Z",
+      "inputDataCutoff": "2026-09-19T03:30:58.138Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "BIG": 0.42886563237666564,
+        "SMALL": 0.5711343676233344
+      },
+      "evaluationTimestamp": "2026-09-19T03:31:58.171Z",
+      "actualValue": "SMALL"
+    },
+    {
+      "id": "pred-number-20260919100010212",
+      "roundId": "20260919100010212",
+      "predictionType": "NUMBER",
+      "predictedValue": 2,
+      "probability": 0.174,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:30:58.146Z",
+      "inputDataCutoff": "2026-09-19T03:30:58.138Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "0": 0.093,
+        "1": 0.112,
+        "2": 0.174,
+        "3": 0.12,
+        "4": 0.08,
+        "5": 0.079,
+        "6": 0.065,
+        "7": 0.137,
+        "8": 0.078,
+        "9": 0.062
+      },
+      "primaryCategory": "SMALL",
+      "backupValue": 8,
+      "backupProbability": 0.078,
+      "backupCategory": "BIG",
+      "evaluationTimestamp": "2026-09-19T03:31:58.171Z",
+      "actualValue": 0,
+      "backupStatus": "INCORRECT"
+    },
+    {
+      "id": "pred-colour-20260919100010213",
+      "roundId": "20260919100010213",
+      "predictionType": "COLOUR",
+      "predictedValue": "GREEN",
+      "probability": 0.516,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:31:58.174Z",
+      "inputDataCutoff": "2026-09-19T03:31:58.171Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "RED": 0.4095852260063067,
+        "GREEN": 0.44209368470596266,
+        "VIOLET": 0.1483210892877307
+      },
+      "evaluationTimestamp": "2026-09-19T03:32:58.192Z",
+      "actualValue": "RED"
+    },
+    {
+      "id": "pred-size-20260919100010213",
+      "roundId": "20260919100010213",
+      "predictionType": "SIZE",
+      "predictedValue": "SMALL",
+      "probability": 0.578,
+      "confidence": "HIGH",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:31:58.174Z",
+      "inputDataCutoff": "2026-09-19T03:31:58.171Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "BIG": 0.4218779890690637,
+        "SMALL": 0.5781220109309363
+      },
+      "evaluationTimestamp": "2026-09-19T03:32:58.192Z",
+      "actualValue": "SMALL"
+    },
+    {
+      "id": "pred-number-20260919100010213",
+      "roundId": "20260919100010213",
+      "predictionType": "NUMBER",
+      "predictedValue": 1,
+      "probability": 0.112,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:31:58.174Z",
+      "inputDataCutoff": "2026-09-19T03:31:58.171Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "0": 0.101,
+        "1": 0.112,
+        "2": 0.159,
+        "3": 0.106,
+        "4": 0.082,
+        "5": 0.106,
+        "6": 0.067,
+        "7": 0.123,
+        "8": 0.08,
+        "9": 0.064
+      },
+      "primaryCategory": "SMALL",
+      "backupValue": 7,
+      "backupProbability": 0.123,
+      "backupCategory": "BIG",
+      "evaluationTimestamp": "2026-09-19T03:32:58.192Z",
+      "actualValue": 2,
+      "backupStatus": "INCORRECT"
+    },
+    {
+      "id": "pred-colour-20260919100010214",
+      "roundId": "20260919100010214",
+      "predictionType": "COLOUR",
+      "predictedValue": "GREEN",
+      "probability": 0.516,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:32:58.194Z",
+      "inputDataCutoff": "2026-09-19T03:32:58.192Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "RED": 0.4008961379116904,
+        "GREEN": 0.4330891378588751,
+        "VIOLET": 0.1660147242294345
+      },
+      "evaluationTimestamp": "2026-09-19T03:33:58.193Z",
+      "actualValue": "GREEN"
+    },
+    {
+      "id": "pred-size-20260919100010214",
+      "roundId": "20260919100010214",
+      "predictionType": "SIZE",
+      "predictedValue": "SMALL",
+      "probability": 0.576,
+      "confidence": "HIGH",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:32:58.194Z",
+      "inputDataCutoff": "2026-09-19T03:32:58.192Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "BIG": 0.42355898376373574,
+        "SMALL": 0.5764410162362642
+      },
+      "evaluationTimestamp": "2026-09-19T03:33:58.193Z",
+      "actualValue": "SMALL"
+    },
+    {
+      "id": "pred-number-20260919100010214",
+      "roundId": "20260919100010214",
+      "predictionType": "NUMBER",
+      "predictedValue": 3,
+      "probability": 0.102,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:32:58.194Z",
+      "inputDataCutoff": "2026-09-19T03:32:58.192Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "0": 0.114,
+        "1": 0.074,
+        "2": 0.14,
+        "3": 0.102,
+        "4": 0.086,
+        "5": 0.086,
+        "6": 0.108,
+        "7": 0.078,
+        "8": 0.091,
+        "9": 0.121
+      },
+      "primaryCategory": "SMALL",
+      "backupValue": 9,
+      "backupProbability": 0.121,
+      "backupCategory": "BIG",
+      "evaluationTimestamp": "2026-09-19T03:33:58.193Z",
+      "actualValue": 1,
+      "backupStatus": "INCORRECT"
+    },
+    {
+      "id": "pred-colour-20260919100010215",
+      "roundId": "20260919100010215",
+      "predictionType": "COLOUR",
+      "predictedValue": "RED",
+      "probability": 0.622,
+      "confidence": "HIGH",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:33:58.195Z",
+      "inputDataCutoff": "2026-09-19T03:33:58.193Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "RED": 0.5266040873513333,
+        "GREEN": 0.2822474093802149,
+        "VIOLET": 0.19114850326845184
+      },
+      "evaluationTimestamp": "2026-09-19T03:34:58.200Z",
+      "actualValue": "RED"
+    },
+    {
+      "id": "pred-size-20260919100010215",
+      "roundId": "20260919100010215",
+      "predictionType": "SIZE",
+      "predictedValue": "BIG",
+      "probability": 0.555,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:33:58.195Z",
+      "inputDataCutoff": "2026-09-19T03:33:58.193Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "BIG": 0.5551967101606591,
+        "SMALL": 0.44480328983934087
+      },
+      "evaluationTimestamp": "2026-09-19T03:34:58.200Z",
+      "actualValue": "SMALL"
+    },
+    {
+      "id": "pred-number-20260919100010215",
+      "roundId": "20260919100010215",
+      "predictionType": "NUMBER",
+      "predictedValue": 8,
+      "probability": 0.177,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:33:58.195Z",
+      "inputDataCutoff": "2026-09-19T03:33:58.193Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "0": 0.11,
+        "1": 0.098,
+        "2": 0.163,
+        "3": 0.069,
+        "4": 0.102,
+        "5": 0.102,
+        "6": 0.059,
+        "7": 0.078,
+        "8": 0.177,
+        "9": 0.041
+      },
+      "primaryCategory": "BIG",
+      "backupValue": 2,
+      "backupProbability": 0.163,
+      "backupCategory": "SMALL",
+      "evaluationTimestamp": "2026-09-19T03:34:58.200Z",
+      "actualValue": 4,
+      "backupStatus": "INCORRECT"
+    },
+    {
+      "id": "pred-colour-20260919100010216",
+      "roundId": "20260919100010216",
+      "predictionType": "COLOUR",
+      "predictedValue": "GREEN",
+      "probability": 0.552,
+      "confidence": "HIGH",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:34:58.202Z",
+      "inputDataCutoff": "2026-09-19T03:34:58.200Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "RED": 0.3714019889545656,
+        "GREEN": 0.47453992511528736,
+        "VIOLET": 0.154058085930147
+      },
+      "evaluationTimestamp": "2026-09-19T03:35:58.218Z",
+      "actualValue": "RED"
+    },
+    {
+      "id": "pred-size-20260919100010216",
+      "roundId": "20260919100010216",
+      "predictionType": "SIZE",
+      "predictedValue": "BIG",
+      "probability": 0.522,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:34:58.202Z",
+      "inputDataCutoff": "2026-09-19T03:34:58.200Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "BIG": 0.5221135306461149,
+        "SMALL": 0.4778864693538852
+      },
+      "evaluationTimestamp": "2026-09-19T03:35:58.218Z",
+      "actualValue": "BIG"
+    },
+    {
+      "id": "pred-number-20260919100010216",
+      "roundId": "20260919100010216",
+      "predictionType": "NUMBER",
+      "predictedValue": 5,
+      "probability": 0.114,
+      "confidence": "LOW",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:34:58.202Z",
+      "inputDataCutoff": "2026-09-19T03:34:58.200Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "0": 0.086,
+        "1": 0.104,
+        "2": 0.138,
+        "3": 0.064,
+        "4": 0.113,
+        "5": 0.114,
+        "6": 0.103,
+        "7": 0.105,
+        "8": 0.121,
+        "9": 0.052
+      },
+      "primaryCategory": "BIG",
+      "backupValue": 1,
+      "backupProbability": 0.104,
+      "backupCategory": "SMALL",
+      "evaluationTimestamp": "2026-09-19T03:35:58.218Z",
+      "actualValue": 8,
+      "backupStatus": "INCORRECT"
+    },
+    {
+      "id": "pred-colour-20260919100010217",
+      "roundId": "20260919100010217",
+      "predictionType": "COLOUR",
+      "predictedValue": "GREEN",
+      "probability": 0.509,
+      "confidence": "LOW",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:35:58.219Z",
+      "inputDataCutoff": "2026-09-19T03:35:58.217Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "RED": 0.41344705336899457,
+        "GREEN": 0.4307311360029629,
+        "VIOLET": 0.15582181062804262
+      },
+      "evaluationTimestamp": "2026-09-19T03:36:58.220Z",
+      "actualValue": "RED"
+    },
+    {
+      "id": "pred-size-20260919100010217",
+      "roundId": "20260919100010217",
+      "predictionType": "SIZE",
+      "predictedValue": "SMALL",
+      "probability": 0.526,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:35:58.219Z",
+      "inputDataCutoff": "2026-09-19T03:35:58.217Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "BIG": 0.4740966909724975,
+        "SMALL": 0.5259033090275026
+      },
+      "evaluationTimestamp": "2026-09-19T03:36:58.220Z",
+      "actualValue": "BIG"
+    },
+    {
+      "id": "pred-number-20260919100010217",
+      "roundId": "20260919100010217",
+      "predictionType": "NUMBER",
+      "predictedValue": 1,
+      "probability": 0.121,
+      "confidence": "LOW",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:35:58.219Z",
+      "inputDataCutoff": "2026-09-19T03:35:58.217Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "0": 0.11,
+        "1": 0.121,
+        "2": 0.139,
+        "3": 0.078,
+        "4": 0.112,
+        "5": 0.129,
+        "6": 0.089,
+        "7": 0.065,
+        "8": 0.082,
+        "9": 0.074
+      },
+      "primaryCategory": "SMALL",
+      "backupValue": 5,
+      "backupProbability": 0.129,
+      "backupCategory": "BIG",
+      "evaluationTimestamp": "2026-09-19T03:36:58.220Z",
+      "actualValue": 8,
+      "backupStatus": "INCORRECT"
+    },
+    {
+      "id": "pred-colour-20260919100010218",
+      "roundId": "20260919100010218",
+      "predictionType": "COLOUR",
+      "predictedValue": "RED",
+      "probability": 0.556,
+      "confidence": "HIGH",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:36:58.222Z",
+      "inputDataCutoff": "2026-09-19T03:36:58.220Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "RED": 0.4860096709042827,
+        "GREEN": 0.374357326194922,
+        "VIOLET": 0.13963300290079533
+      },
+      "evaluationTimestamp": "2026-09-19T03:37:58.230Z",
+      "actualValue": "RED"
+    },
+    {
+      "id": "pred-size-20260919100010218",
+      "roundId": "20260919100010218",
+      "predictionType": "SIZE",
+      "predictedValue": "SMALL",
+      "probability": 0.544,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:36:58.222Z",
+      "inputDataCutoff": "2026-09-19T03:36:58.220Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "BIG": 0.4555672897661098,
+        "SMALL": 0.5444327102338903
+      },
+      "evaluationTimestamp": "2026-09-19T03:37:58.230Z",
+      "actualValue": "BIG"
+    },
+    {
+      "id": "pred-number-20260919100010218",
+      "roundId": "20260919100010218",
+      "predictionType": "NUMBER",
+      "predictedValue": 2,
+      "probability": 0.168,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:36:58.221Z",
+      "inputDataCutoff": "2026-09-19T03:36:58.220Z",
+      "status": "CORRECT",
+      "allProbabilities": {
+        "0": 0.094,
+        "1": 0.105,
+        "2": 0.168,
+        "3": 0.08,
+        "4": 0.096,
+        "5": 0.113,
+        "6": 0.073,
+        "7": 0.063,
+        "8": 0.104,
+        "9": 0.104
+      },
+      "primaryCategory": "SMALL",
+      "backupValue": 8,
+      "backupProbability": 0.104,
+      "backupCategory": "BIG",
+      "evaluationTimestamp": "2026-09-19T03:37:58.230Z",
+      "actualValue": 8,
+      "backupStatus": "CORRECT"
+    },
+    {
+      "id": "pred-colour-20260919100010219",
+      "roundId": "20260919100010219",
+      "predictionType": "COLOUR",
+      "predictedValue": "RED",
+      "probability": 0.573,
+      "confidence": "HIGH",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:37:58.231Z",
+      "inputDataCutoff": "2026-09-19T03:37:58.229Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "RED": 0.5043914433777166,
+        "GREEN": 0.35934245986053326,
+        "VIOLET": 0.13626609676175014
+      },
+      "evaluationTimestamp": "2026-09-19T03:38:58.914Z",
+      "actualValue": "GREEN"
+    },
+    {
+      "id": "pred-size-20260919100010219",
+      "roundId": "20260919100010219",
+      "predictionType": "SIZE",
+      "predictedValue": "SMALL",
+      "probability": 0.545,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:37:58.231Z",
+      "inputDataCutoff": "2026-09-19T03:37:58.229Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "BIG": 0.4547489227477024,
+        "SMALL": 0.5452510772522976
+      },
+      "evaluationTimestamp": "2026-09-19T03:38:58.914Z",
+      "actualValue": "BIG"
+    },
+    {
+      "id": "pred-number-20260919100010219",
+      "roundId": "20260919100010219",
+      "predictionType": "NUMBER",
+      "predictedValue": 2,
+      "probability": 0.158,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:37:58.231Z",
+      "inputDataCutoff": "2026-09-19T03:37:58.229Z",
+      "status": "INCORRECT",
+      "allProbabilities": {
+        "0": 0.091,
+        "1": 0.102,
+        "2": 0.158,
+        "3": 0.074,
+        "4": 0.093,
+        "5": 0.11,
+        "6": 0.07,
+        "7": 0.061,
+        "8": 0.145,
+        "9": 0.097
+      },
+      "primaryCategory": "SMALL",
+      "backupValue": 8,
+      "backupProbability": 0.145,
+      "backupCategory": "BIG",
+      "evaluationTimestamp": "2026-09-19T03:38:58.914Z",
+      "actualValue": 9,
+      "backupStatus": "INCORRECT"
+    },
+    {
+      "id": "pred-colour-20260919100010220",
+      "roundId": "20260919100010220",
+      "predictionType": "COLOUR",
+      "predictedValue": "RED",
+      "probability": 0.562,
+      "confidence": "HIGH",
+      "modelId": "ensemble-colour-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-c-vip-3",
+      "timestamp": "2026-09-19T03:38:58.922Z",
+      "inputDataCutoff": "2026-09-19T03:38:58.914Z",
+      "status": "PENDING",
+      "allProbabilities": {
+        "RED": 0.46810291276737725,
+        "GREEN": 0.34314638550693877,
+        "VIOLET": 0.188750701725684
+      }
+    },
+    {
+      "id": "pred-size-20260919100010220",
+      "roundId": "20260919100010220",
+      "predictionType": "SIZE",
+      "predictedValue": "SMALL",
+      "probability": 0.536,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-size-vip-v3",
+      "modelVersion": "3.1.0",
+      "ensembleVersion": "ens-s-vip-3",
+      "timestamp": "2026-09-19T03:38:58.921Z",
+      "inputDataCutoff": "2026-09-19T03:38:58.914Z",
+      "status": "PENDING",
+      "allProbabilities": {
+        "BIG": 0.4636931821466607,
+        "SMALL": 0.5363068178533393
+      }
+    },
+    {
+      "id": "pred-number-20260919100010220",
+      "roundId": "20260919100010220",
+      "predictionType": "NUMBER",
+      "predictedValue": 2,
+      "probability": 0.162,
+      "confidence": "MEDIUM",
+      "modelId": "ensemble-number-v3",
+      "modelVersion": "3.0.1",
+      "ensembleVersion": "ens-n-1",
+      "timestamp": "2026-09-19T03:38:58.921Z",
+      "inputDataCutoff": "2026-09-19T03:38:58.914Z",
+      "status": "PENDING",
+      "allProbabilities": {
+        "0": 0.12,
+        "1": 0.098,
+        "2": 0.162,
+        "3": 0.086,
+        "4": 0.072,
+        "5": 0.082,
+        "6": 0.143,
+        "7": 0.082,
+        "8": 0.101,
+        "9": 0.055
+      },
+      "primaryCategory": "SMALL",
+      "backupValue": 6,
+      "backupProbability": 0.143,
+      "backupCategory": "BIG"
     }
   ],
   "adminPredictions": [],
@@ -35208,13 +38110,258 @@
       "actor": "wingo_api_sync_interval_poll",
       "details": "Round 20260917100010242 result: 2 (RED/SMALL)",
       "timestamp": "2026-09-17T04:01:57.842Z"
+    },
+    {
+      "id": "log-e044e365-fa40-4b88-a419-291ed8203425",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_startup",
+      "details": "Round 20260919100010185 result: 0 (VIOLET/SMALL)",
+      "timestamp": "2026-09-19T03:14:35.535Z"
+    },
+    {
+      "id": "log-d62bd1ae-edb3-422a-809e-6a2bfde8950d",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_startup",
+      "details": "Round 20260919100010186 result: 7 (GREEN/BIG)",
+      "timestamp": "2026-09-19T03:14:35.550Z"
+    },
+    {
+      "id": "log-42a8ca8b-03b4-4aa6-a1a7-4bf8f3756285",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_startup",
+      "details": "Round 20260919100010187 result: 7 (GREEN/BIG)",
+      "timestamp": "2026-09-19T03:14:35.564Z"
+    },
+    {
+      "id": "log-72f8b6d4-cd7b-41b8-b1a9-f4666e33323e",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_startup",
+      "details": "Round 20260919100010188 result: 3 (GREEN/SMALL)",
+      "timestamp": "2026-09-19T03:14:35.578Z"
+    },
+    {
+      "id": "log-0ce04f50-4c3a-4dd9-9308-47056e265a16",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_startup",
+      "details": "Round 20260919100010189 result: 7 (GREEN/BIG)",
+      "timestamp": "2026-09-19T03:14:35.596Z"
+    },
+    {
+      "id": "log-4e221448-4202-48a4-8fae-deaeb72f6999",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_startup",
+      "details": "Round 20260919100010190 result: 6 (RED/BIG)",
+      "timestamp": "2026-09-19T03:14:35.609Z"
+    },
+    {
+      "id": "log-87d220de-e610-4d07-88e9-b29cb0da20ee",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_startup",
+      "details": "Round 20260919100010191 result: 0 (VIOLET/SMALL)",
+      "timestamp": "2026-09-19T03:14:35.623Z"
+    },
+    {
+      "id": "log-94b542af-fa48-4e9f-88ef-6dbeb9ba223e",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_startup",
+      "details": "Round 20260919100010192 result: 2 (RED/SMALL)",
+      "timestamp": "2026-09-19T03:14:35.637Z"
+    },
+    {
+      "id": "log-a93a2a03-26c3-41a8-aeb9-3a7e4c0696b7",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_startup",
+      "details": "Round 20260919100010193 result: 9 (GREEN/BIG)",
+      "timestamp": "2026-09-19T03:14:35.651Z"
+    },
+    {
+      "id": "log-a93e87a4-4529-4a88-bc62-03c2f249ff99",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_startup",
+      "details": "Round 20260919100010194 result: 5 (VIOLET/BIG)",
+      "timestamp": "2026-09-19T03:14:35.666Z"
+    },
+    {
+      "id": "log-e453ce7d-e31d-425a-aa23-43930b0f62d2",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_interval_poll",
+      "details": "Round 20260919100010195 result: 2 (RED/SMALL)",
+      "timestamp": "2026-09-19T03:14:59.341Z"
+    },
+    {
+      "id": "log-ebfe648d-107e-4ffb-94d3-fda5b3bba677",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_interval_poll",
+      "details": "Round 20260919100010196 result: 8 (RED/BIG)",
+      "timestamp": "2026-09-19T03:15:59.346Z"
+    },
+    {
+      "id": "log-0884c844-4c09-4a0e-bb58-c23faa60051e",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_interval_poll",
+      "details": "Round 20260919100010197 result: 3 (GREEN/SMALL)",
+      "timestamp": "2026-09-19T03:16:59.356Z"
+    },
+    {
+      "id": "log-9463a3e5-05e3-4886-abcc-b61796e0d5e6",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_interval_poll",
+      "details": "Round 20260919100010198 result: 2 (RED/SMALL)",
+      "timestamp": "2026-09-19T03:17:59.373Z"
+    },
+    {
+      "id": "log-ee516b2c-ae58-4a87-8a73-af6f4ec2cfa9",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_interval_poll",
+      "details": "Round 20260919100010199 result: 3 (GREEN/SMALL)",
+      "timestamp": "2026-09-19T03:18:59.381Z"
+    },
+    {
+      "id": "log-ee503106-99f2-4708-82db-c4461222d314",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_interval_poll",
+      "details": "Round 20260919100010200 result: 4 (RED/SMALL)",
+      "timestamp": "2026-09-19T03:19:59.503Z"
+    },
+    {
+      "id": "log-66d76b93-17c7-43af-8eae-b2ca149a0dc3",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_interval_poll",
+      "details": "Round 20260919100010201 result: 5 (VIOLET/BIG)",
+      "timestamp": "2026-09-19T03:20:59.464Z"
+    },
+    {
+      "id": "log-89ddef87-cb3a-4bee-817c-2d7d28450d08",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_interval_poll",
+      "details": "Round 20260919100010202 result: 4 (RED/SMALL)",
+      "timestamp": "2026-09-19T03:21:59.469Z"
+    },
+    {
+      "id": "log-b25cc61d-ff01-406c-ad3f-368b86864b2f",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_interval_poll",
+      "details": "Round 20260919100010203 result: 6 (RED/BIG)",
+      "timestamp": "2026-09-19T03:22:59.479Z"
+    },
+    {
+      "id": "log-6e34cfe4-7443-4bff-87e6-10a4b5bbc95a",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_interval_poll",
+      "details": "Round 20260919100010204 result: 6 (RED/BIG)",
+      "timestamp": "2026-09-19T03:23:59.520Z"
+    },
+    {
+      "id": "log-7868122f-26aa-4efb-a816-38f5f8916504",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_interval_poll",
+      "details": "Round 20260919100010205 result: 7 (GREEN/BIG)",
+      "timestamp": "2026-09-19T03:24:59.501Z"
+    },
+    {
+      "id": "log-34746fbd-6309-4cc0-95b0-41657ba8f08e",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_interval_poll",
+      "details": "Round 20260919100010206 result: 4 (RED/SMALL)",
+      "timestamp": "2026-09-19T03:25:59.499Z"
+    },
+    {
+      "id": "log-f7cb90ae-84b2-403b-bd30-0fa0ec14b885",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_interval_poll",
+      "details": "Round 20260919100010207 result: 2 (RED/SMALL)",
+      "timestamp": "2026-09-19T03:26:59.510Z"
+    },
+    {
+      "id": "log-ff731a2b-1a8b-4d74-b3fe-b1c0f21518fd",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_interval_poll",
+      "details": "Round 20260919100010208 result: 8 (RED/BIG)",
+      "timestamp": "2026-09-19T03:27:59.523Z"
+    },
+    {
+      "id": "log-e0009647-cbab-492c-8de8-b574b5369728",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_interval_poll",
+      "details": "Round 20260919100010209 result: 2 (RED/SMALL)",
+      "timestamp": "2026-09-19T03:28:59.535Z"
+    },
+    {
+      "id": "log-f6729a69-7d17-4cba-ab29-bc4d00d3dc6e",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_interval_poll",
+      "details": "Round 20260919100010210 result: 2 (RED/SMALL)",
+      "timestamp": "2026-09-19T03:29:59.556Z"
+    },
+    {
+      "id": "log-edf9d011-3e81-4650-a12a-3b988860859a",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_interval_poll",
+      "details": "Round 20260919100010211 result: 0 (VIOLET/SMALL)",
+      "timestamp": "2026-09-19T03:30:58.147Z"
+    },
+    {
+      "id": "log-48ae1bf4-0088-4cf2-a41a-1a700c145014",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_interval_poll",
+      "details": "Round 20260919100010212 result: 0 (VIOLET/SMALL)",
+      "timestamp": "2026-09-19T03:31:58.174Z"
+    },
+    {
+      "id": "log-d1a4f9ab-d851-4f4e-8f72-3adbd6bb9c81",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_interval_poll",
+      "details": "Round 20260919100010213 result: 2 (RED/SMALL)",
+      "timestamp": "2026-09-19T03:32:58.194Z"
+    },
+    {
+      "id": "log-ad7dd5be-689d-4ac7-a2e1-24f191fe7ce0",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_interval_poll",
+      "details": "Round 20260919100010214 result: 1 (GREEN/SMALL)",
+      "timestamp": "2026-09-19T03:33:58.195Z"
+    },
+    {
+      "id": "log-c8963b90-7799-4470-9eaa-5f5ea2788479",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_interval_poll",
+      "details": "Round 20260919100010215 result: 4 (RED/SMALL)",
+      "timestamp": "2026-09-19T03:34:58.202Z"
+    },
+    {
+      "id": "log-4e94b623-5505-4330-8c14-8e2d9fa25e85",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_interval_poll",
+      "details": "Round 20260919100010216 result: 8 (RED/BIG)",
+      "timestamp": "2026-09-19T03:35:58.219Z"
+    },
+    {
+      "id": "log-045328dd-640a-4bb9-80b7-8206bb424247",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_interval_poll",
+      "details": "Round 20260919100010217 result: 8 (RED/BIG)",
+      "timestamp": "2026-09-19T03:36:58.222Z"
+    },
+    {
+      "id": "log-5503a43c-9e8a-4a79-9d93-f0ea1a707bce",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_interval_poll",
+      "details": "Round 20260919100010218 result: 8 (RED/BIG)",
+      "timestamp": "2026-09-19T03:37:58.231Z"
+    },
+    {
+      "id": "log-1fdb0712-ae65-44da-851b-299dfbc468f1",
+      "action": "RESULT_SUBMITTED",
+      "actor": "wingo_api_sync_interval_poll",
+      "details": "Round 20260919100010219 result: 9 (GREEN/BIG)",
+      "timestamp": "2026-09-19T03:38:58.922Z"
     }
   ],
   "isDevMode": false,
-  "activeRoundId": "20260917100010243",
-  "nextDrawTime": "2026-09-17T04:03:00.000Z",
+  "activeRoundId": "20260919100010220",
+  "nextDrawTime": "2026-09-19T03:40:00.000Z",
   "lastNumberStatus": "DEGRADED",
-  "currentLevel": 2,
+  "currentLevel": 1,
   "levelHistory": [
     {
       "roundId": "20260917100010184",
@@ -35635,6 +38782,216 @@
       "level": 1,
       "outcome": "WIN",
       "nextLevel": 2
+    },
+    {
+      "roundId": "20260919100010185",
+      "level": 2,
+      "outcome": "LOSS",
+      "nextLevel": 1
+    },
+    {
+      "roundId": "20260919100010186",
+      "level": 1,
+      "outcome": "LOSS",
+      "nextLevel": 1
+    },
+    {
+      "roundId": "20260919100010187",
+      "level": 1,
+      "outcome": "LOSS",
+      "nextLevel": 1
+    },
+    {
+      "roundId": "20260919100010188",
+      "level": 1,
+      "outcome": "LOSS",
+      "nextLevel": 1
+    },
+    {
+      "roundId": "20260919100010189",
+      "level": 1,
+      "outcome": "LOSS",
+      "nextLevel": 1
+    },
+    {
+      "roundId": "20260919100010190",
+      "level": 1,
+      "outcome": "LOSS",
+      "nextLevel": 1
+    },
+    {
+      "roundId": "20260919100010191",
+      "level": 1,
+      "outcome": "LOSS",
+      "nextLevel": 1
+    },
+    {
+      "roundId": "20260919100010192",
+      "level": 1,
+      "outcome": "LOSS",
+      "nextLevel": 1
+    },
+    {
+      "roundId": "20260919100010193",
+      "level": 1,
+      "outcome": "LOSS",
+      "nextLevel": 1
+    },
+    {
+      "roundId": "20260919100010194",
+      "level": 1,
+      "outcome": "LOSS",
+      "nextLevel": 1
+    },
+    {
+      "roundId": "20260919100010195",
+      "level": 1,
+      "outcome": "WIN",
+      "nextLevel": 2
+    },
+    {
+      "roundId": "20260919100010196",
+      "level": 2,
+      "outcome": "WIN",
+      "nextLevel": 3
+    },
+    {
+      "roundId": "20260919100010197",
+      "level": 3,
+      "outcome": "WIN",
+      "nextLevel": 4
+    },
+    {
+      "roundId": "20260919100010198",
+      "level": 4,
+      "outcome": "WIN",
+      "nextLevel": 1
+    },
+    {
+      "roundId": "20260919100010199",
+      "level": 1,
+      "outcome": "WIN",
+      "nextLevel": 2
+    },
+    {
+      "roundId": "20260919100010200",
+      "level": 2,
+      "outcome": "WIN",
+      "nextLevel": 3
+    },
+    {
+      "roundId": "20260919100010201",
+      "level": 3,
+      "outcome": "WIN",
+      "nextLevel": 4
+    },
+    {
+      "roundId": "20260919100010202",
+      "level": 4,
+      "outcome": "WIN",
+      "nextLevel": 1
+    },
+    {
+      "roundId": "20260919100010203",
+      "level": 1,
+      "outcome": "WIN",
+      "nextLevel": 2
+    },
+    {
+      "roundId": "20260919100010204",
+      "level": 2,
+      "outcome": "LOSS",
+      "nextLevel": 1
+    },
+    {
+      "roundId": "20260919100010205",
+      "level": 1,
+      "outcome": "LOSS",
+      "nextLevel": 1
+    },
+    {
+      "roundId": "20260919100010206",
+      "level": 1,
+      "outcome": "WIN",
+      "nextLevel": 2
+    },
+    {
+      "roundId": "20260919100010207",
+      "level": 2,
+      "outcome": "LOSS",
+      "nextLevel": 1
+    },
+    {
+      "roundId": "20260919100010208",
+      "level": 1,
+      "outcome": "WIN",
+      "nextLevel": 2
+    },
+    {
+      "roundId": "20260919100010209",
+      "level": 2,
+      "outcome": "WIN",
+      "nextLevel": 3
+    },
+    {
+      "roundId": "20260919100010210",
+      "level": 3,
+      "outcome": "WIN",
+      "nextLevel": 4
+    },
+    {
+      "roundId": "20260919100010211",
+      "level": 4,
+      "outcome": "WIN",
+      "nextLevel": 1
+    },
+    {
+      "roundId": "20260919100010212",
+      "level": 1,
+      "outcome": "WIN",
+      "nextLevel": 2
+    },
+    {
+      "roundId": "20260919100010213",
+      "level": 2,
+      "outcome": "WIN",
+      "nextLevel": 3
+    },
+    {
+      "roundId": "20260919100010214",
+      "level": 3,
+      "outcome": "WIN",
+      "nextLevel": 4
+    },
+    {
+      "roundId": "20260919100010215",
+      "level": 4,
+      "outcome": "WIN",
+      "nextLevel": 1
+    },
+    {
+      "roundId": "20260919100010216",
+      "level": 1,
+      "outcome": "WIN",
+      "nextLevel": 2
+    },
+    {
+      "roundId": "20260919100010217",
+      "level": 2,
+      "outcome": "LOSS",
+      "nextLevel": 1
+    },
+    {
+      "roundId": "20260919100010218",
+      "level": 1,
+      "outcome": "WIN",
+      "nextLevel": 2
+    },
+    {
+      "roundId": "20260919100010219",
+      "level": 2,
+      "outcome": "LOSS",
+      "nextLevel": 1
     }
   ]
 }

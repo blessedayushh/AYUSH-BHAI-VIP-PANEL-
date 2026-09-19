@@ -37,23 +37,36 @@ async function apiFetch<T>(endpoint: string, options: RequestInit = {}): Promise
     headers['Authorization'] = `Bearer ${token}`;
   }
 
-  const res = await fetch(endpoint, {
-    ...options,
-    headers,
-  });
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 8000);
 
-  if (!res.ok) {
-    let errMessage = 'Request failed';
-    try {
-      const errJson = await res.json();
-      errMessage = errJson.error || errMessage;
-    } catch {
-      // ignore json parse error
+  try {
+    const res = await fetch(endpoint, {
+      ...options,
+      headers,
+      signal: controller.signal,
+    });
+
+    if (!res.ok) {
+      let errMessage = 'Request failed';
+      try {
+        const errJson = await res.json();
+        errMessage = errJson.error || errMessage;
+      } catch {
+        // ignore json parse error
+      }
+      throw new Error(errMessage);
     }
-    throw new Error(errMessage);
-  }
 
-  return res.json();
+    return await res.json();
+  } catch (err: any) {
+    if (err.name === 'AbortError') {
+      throw new Error('Server request timed out. Please check connection.');
+    }
+    throw err;
+  } finally {
+    clearTimeout(timeoutId);
+  }
 }
 
 export const api = {
@@ -62,89 +75,22 @@ export const api = {
     const cleanUser = username.trim();
     const cleanKey = licenseKey.trim();
 
-    const isMasterAdmin =
-      cleanKey.toLowerCase() === 'admin' ||
-      cleanKey.toLowerCase() === 'admin123' ||
-      cleanKey.toLowerCase() === 'ashut999' ||
-      cleanKey === 'ADMIN-PRO-MASTER-2026' ||
-      cleanKey.toLowerCase() === 'ayush' ||
-      cleanKey.toLowerCase() === 'ayush999' ||
-      cleanKey.toUpperCase().startsWith('ADMIN-') ||
-      cleanUser.toLowerCase() === 'admin' ||
-      cleanUser.toLowerCase() === 'blessed.ayushh' ||
-      cleanUser.toLowerCase() === 'ayush';
-
-    const isVipUser =
-      cleanKey.toUpperCase().startsWith('COLOR-') ||
-      cleanKey.toUpperCase().includes('VIP') ||
-      cleanUser.toLowerCase() === 'trader_alex' ||
-      cleanUser.toLowerCase() === 'demo_user';
-
-    try {
-      const res = await apiFetch<{ token: string; user: User; license: any }>('/api/auth/login', {
-        method: 'POST',
-        body: JSON.stringify({ username: cleanUser, licenseKey: cleanKey }),
-      });
-      if (res && res.user && res.token) {
-        authStorage.setToken(res.token);
-        authStorage.setUser(res.user);
-        return res;
-      }
-    } catch (err: any) {
-      console.warn('[Auth] Server login failed or static host intercepted route:', err?.message);
-
-      // If master admin credentials were used or server route is missing on static hosting:
-      if (isMasterAdmin) {
-        const adminUser: User = {
-          id: 'usr-admin-master',
-          username: cleanUser || 'admin',
-          role: 'ADMIN',
-          licenseKey: cleanKey || 'admin',
-          status: 'ACTIVE',
-        };
-        const license = {
-          id: 'lic-admin-master',
-          key: cleanKey || 'admin',
-          username: cleanUser || 'admin',
-          status: 'ACTIVE' as const,
-          expiresAt: new Date(Date.now() + 365 * 86400000).toISOString(),
-          createdAt: new Date().toISOString(),
-          notes: 'Master Administrator Session',
-        };
-        const token = 'token-admin-' + Date.now();
-        authStorage.setToken(token);
-        authStorage.setUser(adminUser);
-        return { token, user: adminUser, license };
-      }
-
-      if (isVipUser) {
-        const vipUser: User = {
-          id: 'usr-vip-' + (cleanUser.toLowerCase() || 'trader'),
-          username: cleanUser || 'VIP Trader',
-          role: 'USER',
-          licenseKey: cleanKey,
-          status: 'ACTIVE',
-        };
-        const license = {
-          id: 'lic-vip-client',
-          key: cleanKey,
-          username: cleanUser,
-          status: 'ACTIVE' as const,
-          expiresAt: new Date(Date.now() + 60 * 86400000).toISOString(),
-          createdAt: new Date().toISOString(),
-          notes: 'VIP Trader Session',
-        };
-        const token = 'token-vip-' + Date.now();
-        authStorage.setToken(token);
-        authStorage.setUser(vipUser);
-        return { token, user: vipUser, license };
-      }
-
-      // If user typed custom wrong credentials, show helpful message
-      throw new Error(err.message === 'Request failed' ? 'Authentication failed. Please verify your license key or use admin / admin.' : err.message);
+    if (!cleanUser || !cleanKey) {
+      throw new Error('Username and VIP license key are required.');
     }
 
-    throw new Error('Authentication failed');
+    const res = await apiFetch<{ token: string; user: User; license: any }>('/api/auth/login', {
+      method: 'POST',
+      body: JSON.stringify({ username: cleanUser, licenseKey: cleanKey }),
+    });
+
+    if (res && res.user && res.token) {
+      authStorage.setToken(res.token);
+      authStorage.setUser(res.user);
+      return res;
+    }
+
+    throw new Error('Authentication failed. Please verify your VIP license key.');
   },
 
   logout: async () => {
@@ -357,7 +303,9 @@ export class WebSocketClient {
   private ws: WebSocket | null = null;
   private listeners: Map<string, Set<(data: any) => void>> = new Map();
   private reconnectTimer: any = null;
+  private failedAttempts = 0;
   public isConnected = false;
+  public isFallbackMode = false;
 
   public connect() {
     if (typeof window === 'undefined') return;
@@ -372,6 +320,8 @@ export class WebSocketClient {
 
       this.ws.onopen = () => {
         this.isConnected = true;
+        this.failedAttempts = 0;
+        this.isFallbackMode = false;
         this.notify('CONNECT', { connected: true });
       };
 
@@ -388,25 +338,39 @@ export class WebSocketClient {
 
       this.ws.onclose = () => {
         this.isConnected = false;
+        this.failedAttempts++;
+        if (this.failedAttempts >= 2) {
+          this.isFallbackMode = true;
+          this.notify('FALLBACK_MODE', { active: true });
+        }
         this.notify('DISCONNECT', { connected: false });
         this.scheduleReconnect();
       };
 
       this.ws.onerror = () => {
         this.isConnected = false;
+        this.failedAttempts++;
+        if (this.failedAttempts >= 2) {
+          this.isFallbackMode = true;
+          this.notify('FALLBACK_MODE', { active: true });
+        }
       };
-    } catch (err) {
-      console.warn('WebSocket connection error', err);
+    } catch {
+      this.failedAttempts++;
+      this.isFallbackMode = true;
+      this.notify('FALLBACK_MODE', { active: true });
       this.scheduleReconnect();
     }
   }
 
   private scheduleReconnect() {
     if (this.reconnectTimer) return;
+    // Backoff reconnects to avoid flooding when deployed on serverless environments (e.g. Vercel)
+    const delay = this.failedAttempts >= 2 ? 30000 : 4000;
     this.reconnectTimer = setTimeout(() => {
       this.reconnectTimer = null;
       this.connect();
-    }, 3000);
+    }, delay);
   }
 
   public on(eventType: string, callback: (data: any) => void) {

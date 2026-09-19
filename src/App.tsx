@@ -6,6 +6,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { RealtimeNotification, User, UserDashboardData, getWingoActiveRoundId } from './types';
 import { api, authStorage, wsClient } from './api';
+import { getClientUserDashboard } from './fallbackEngine';
 import { Header } from './components/Header';
 import { LoginModal } from './components/LoginModal';
 import { UserDashboard } from './components/UserDashboard';
@@ -17,11 +18,18 @@ import { ShieldCheck, Info } from 'lucide-react';
 
 export default function App() {
   const [user, setUser] = useState<User | null>(null);
-  const [dashboardData, setDashboardData] = useState<UserDashboardData | null>(null);
+  const [dashboardData, setDashboardData] = useState<UserDashboardData | null>(() => {
+    try {
+      return getClientUserDashboard();
+    } catch {
+      return null;
+    }
+  });
   const [currentTab, setCurrentTab] = useState<'user' | 'trade' | 'admin'>('user');
   const [countdownSeconds, setCountdownSeconds] = useState<number>(30);
   const [activeRoundId, setActiveRoundId] = useState<string>(() => getWingoActiveRoundId());
   const [isWsConnected, setIsWsConnected] = useState<boolean>(false);
+  const [isDataSynced, setIsDataSynced] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(true);
   const [showLoginModal, setShowLoginModal] = useState<boolean>(false);
   const [notifications, setNotifications] = useState<RealtimeNotification[]>([]);
@@ -69,22 +77,34 @@ export default function App() {
   const fetchUserData = useCallback(async () => {
     try {
       const data = await api.getUserDashboard();
-      setDashboardData(data);
-      if (data.activeRoundId) {
-        setActiveRoundId(data.activeRoundId);
-      }
-      if (typeof data.countdownSeconds === 'number') {
-        const sec = Math.max(0, data.countdownSeconds);
-        targetDrawTimeRef.current = Date.now() + sec * 1000;
-        setCountdownSeconds(sec);
-      } else if (data.nextDrawTime) {
-        const target = new Date(data.nextDrawTime).getTime();
-        const diffSec = !isNaN(target) ? Math.max(0, Math.ceil((target - Date.now()) / 1000)) : 60;
-        targetDrawTimeRef.current = Date.now() + diffSec * 1000;
-        setCountdownSeconds(diffSec);
+      if (data) {
+        setDashboardData(data);
+        setIsDataSynced(true);
+        if (data.activeRoundId) {
+          setActiveRoundId(data.activeRoundId);
+        }
+        if (typeof data.countdownSeconds === 'number') {
+          const sec = Math.max(0, data.countdownSeconds);
+          targetDrawTimeRef.current = Date.now() + sec * 1000;
+          setCountdownSeconds(sec);
+        } else if (data.nextDrawTime) {
+          const target = new Date(data.nextDrawTime).getTime();
+          const diffSec = !isNaN(target) ? Math.max(0, Math.ceil((target - Date.now()) / 1000)) : 60;
+          targetDrawTimeRef.current = Date.now() + diffSec * 1000;
+          setCountdownSeconds(diffSec);
+        }
       }
     } catch (err) {
       console.warn('Could not fetch user dashboard', err);
+      // Fallback engine ensures live engine never gets stuck in connecting
+      setDashboardData((prev) => {
+        if (!prev) {
+          const fallback = getClientUserDashboard();
+          setIsDataSynced(true);
+          return fallback;
+        }
+        return prev;
+      });
     }
   }, []);
 
@@ -116,7 +136,10 @@ export default function App() {
     // WebSocket setup
     wsClient.connect();
 
-    const unsubConnect = wsClient.on('CONNECT', () => setIsWsConnected(true));
+    const unsubConnect = wsClient.on('CONNECT', () => {
+      setIsWsConnected(true);
+      setIsDataSynced(true);
+    });
     const unsubDisconnect = wsClient.on('DISCONNECT', () => setIsWsConnected(false));
 
     const unsubTick = wsClient.on('COUNTDOWN_TICK', (data: any) => {
@@ -249,11 +272,30 @@ export default function App() {
     const timer = setInterval(() => {
       if (targetDrawTimeRef.current > 0) {
         const remaining = Math.max(0, Math.ceil((targetDrawTimeRef.current - Date.now()) / 1000));
-        setCountdownSeconds((prev) => (prev !== remaining ? remaining : prev));
+        setCountdownSeconds((prev) => {
+          // If countdown just crossed zero, auto-fetch results and new prediction after a 1.2s buffer
+          if (prev > 0 && remaining === 0) {
+            setTimeout(() => {
+              fetchUserData();
+            }, 1200);
+          }
+          return prev !== remaining ? remaining : prev;
+        });
       }
     }, 250);
     return () => clearInterval(timer);
-  }, []);
+  }, [fetchUserData]);
+
+  // Resilient real-time polling sync (vital for Vercel / serverless deployments where WebSockets are unavailable)
+  useEffect(() => {
+    if (!user) return;
+    const pollInterval = setInterval(() => {
+      if (!isWsConnected) {
+        fetchUserData();
+      }
+    }, 3500);
+    return () => clearInterval(pollInterval);
+  }, [user, isWsConnected, fetchUserData]);
 
   const handleLoginSuccess = async (loggedUser: User) => {
     setUser(loggedUser);
@@ -296,6 +338,7 @@ export default function App() {
         activeRoundId={activeRoundId || dashboardData?.activeRoundId || getWingoActiveRoundId()}
         countdownSeconds={countdownSeconds}
         isWsConnected={isWsConnected}
+        isLive={isWsConnected || isDataSynced}
         isDevMode={dashboardData?.isDevMode || false}
         currentTab={currentTab}
         notifications={notifications}

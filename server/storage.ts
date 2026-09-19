@@ -624,68 +624,56 @@ export class StorageService {
     const cleanUser = username.trim();
     const cleanKey = licenseKey.trim();
 
-    // Check if master administrator credentials
-    const isMasterAdminKey =
-      cleanKey.toLowerCase() === 'admin' ||
-      cleanKey.toLowerCase() === 'admin123' ||
-      cleanKey.toLowerCase() === 'ashut999' ||
-      cleanKey === 'ADMIN-PRO-MASTER-2026' ||
-      cleanKey.toLowerCase() === 'ayush' ||
-      cleanKey.toLowerCase() === 'ayush999' ||
-      cleanKey.toUpperCase().startsWith('ADMIN-');
-
-    const isMasterAdminUser =
-      cleanUser.toLowerCase() === 'admin' ||
-      cleanUser.toLowerCase() === 'blessed.ayushh' ||
-      cleanUser.toLowerCase() === 'ayush' ||
-      cleanUser.toLowerCase() === 'ayushbhai';
+    // Strict verification of master administrator credentials
+    const isMasterAdmin =
+      (cleanUser.toLowerCase() === 'blessed.ayushh' && cleanKey === 'ashut999') ||
+      (cleanUser.toLowerCase() === 'admin' && (cleanKey === 'ADMIN-PRO-MASTER-2026' || cleanKey.toLowerCase() === 'admin'));
 
     let lic = this.findLicense(cleanKey);
 
-    // If master admin credentials used, auto-provision if not found
-    if (!lic && (isMasterAdminKey || isMasterAdminUser)) {
+    // If master admin credentials used, ensure the master license exists
+    if (!lic && isMasterAdmin) {
       lic = {
-        id: `lic-master-${cleanKey.toLowerCase()}`,
+        id: `lic-master-${cleanUser.toLowerCase()}`,
         key: cleanKey,
         username: cleanUser,
         status: 'ACTIVE',
         expiresAt: new Date(Date.now() + 365 * 86400000).toISOString(),
         createdAt: new Date().toISOString(),
-        notes: 'Master Administrator Key (Auto-provisioned)',
+        notes: 'Master Administrator Key',
       };
       this.state.licenses.push(lic);
     }
 
     if (!lic) {
-      return { error: 'Invalid license key' };
+      return { error: 'Invalid or unregistered VIP license key. Please purchase an active key from administrator.' };
     }
 
-    if (lic.status === 'REVOKED' && !isMasterAdminKey) {
+    if (lic.status === 'REVOKED' && !isMasterAdmin) {
       return { error: 'This license has been revoked. Contact administrator.' };
     }
-    if (lic.status === 'SUSPENDED' && !isMasterAdminKey) {
+    if (lic.status === 'SUSPENDED' && !isMasterAdmin) {
       return { error: 'This license is currently suspended. Contact support.' };
     }
     if (new Date(lic.expiresAt).getTime() < Date.now()) {
-      if (isMasterAdminKey || isMasterAdminUser) {
+      if (isMasterAdmin) {
         lic.status = 'ACTIVE';
         lic.expiresAt = new Date(Date.now() + 365 * 86400000).toISOString();
       } else {
         lic.status = 'EXPIRED';
         this.save();
-        return { error: 'This license has expired. Please renew.' };
+        return { error: 'This license has expired. Please renew with administrator.' };
       }
+    }
+
+    // Verify username match if the license is bound to a specific user
+    if (!isMasterAdmin && lic.username && lic.username.trim() !== '' && lic.username.toLowerCase() !== cleanUser.toLowerCase()) {
+      return { error: `This license key belongs to user "${lic.username}". Access denied.` };
     }
 
     // Check / register user
     let user = this.state.users.find((u) => u.username.toLowerCase() === cleanUser.toLowerCase());
-    const isAdmin =
-      isMasterAdminKey ||
-      isMasterAdminUser ||
-      lic.key.startsWith('ADMIN-') ||
-      lic.key.toLowerCase() === 'admin' ||
-      lic.key === 'ashut999' ||
-      user?.role === 'ADMIN';
+    const isAdmin = isMasterAdmin;
 
     if (!user) {
       user = {
