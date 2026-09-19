@@ -119,12 +119,43 @@ export const LoginModal: React.FC<LoginModalProps> = ({ onLoginSuccess }) => {
           </button>
         </form>
 
+        {/* Quick Admin & VIP Logins */}
+        <div className="mt-4 pt-4 border-t border-slate-800 space-y-2">
+          <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider text-center">
+            One-Click Login Credentials
+          </div>
+          <div className="grid grid-cols-2 gap-2">
+            <button
+              type="button"
+              id="btn-quick-admin"
+              onClick={() => {
+                setUsername('admin');
+                setLicenseKey('admin');
+              }}
+              className="px-2.5 py-1.5 rounded-lg bg-purple-950/40 hover:bg-purple-900/50 border border-purple-500/30 text-xs text-purple-300 font-medium transition-colors text-center"
+            >
+              👑 Fill Admin (admin)
+            </button>
+            <button
+              type="button"
+              id="btn-quick-master"
+              onClick={() => {
+                setUsername('blessed.ayushh');
+                setLicenseKey('ashut999');
+              }}
+              className="px-2.5 py-1.5 rounded-lg bg-rose-950/40 hover:bg-rose-900/50 border border-rose-500/30 text-xs text-rose-300 font-medium transition-colors text-center"
+            >
+              💎 Master (ashut999)
+            </button>
+          </div>
+        </div>
+
         {/* Security & Access Notice */}
-        <div className="mt-6 pt-5 border-t border-slate-800">
+        <div className="mt-4 pt-4 border-t border-slate-800">
           <div className="p-3 rounded-xl bg-slate-900/90 border border-slate-800/80 flex items-center justify-center gap-2.5 text-xs text-slate-400">
             <Lock className="w-4 h-4 text-amber-400 shrink-0" />
             <span className="leading-tight">
-              VIP invite-only portal. Usernames & license keys are generated solely within the Admin Panel.
+              Admin Access: <strong>admin</strong> / <strong>admin</strong> (or key <strong>ashut999</strong>).
             </span>
           </div>
         </div>

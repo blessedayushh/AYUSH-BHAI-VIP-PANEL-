@@ -47,11 +47,14 @@ export class StorageService {
 
   constructor() {
     this.ensureDirectory();
+    this.engine = new PredictionEngine(50, 0.25);
     this.loadOrCreate();
-    this.engine = new PredictionEngine(
-      this.state.gameConfig.minNumberValidationSamples,
-      this.state.gameConfig.numberActivationAccuracy
-    );
+    if (this.state && this.state.gameConfig) {
+      this.engine.setConfig(
+        this.state.gameConfig.minNumberValidationSamples || 50,
+        this.state.gameConfig.numberActivationAccuracy || 0.25
+      );
+    }
   }
 
   private ensureDirectory() {
@@ -214,6 +217,46 @@ export class StorageService {
       }
       if (updated) {
         console.log('[Storage] Retroactively updated colour predictions according to Violet+Red dual colour rule.');
+      }
+    }
+
+    // Ensure Master Admin Licenses exist and remain permanently active
+    if (!Array.isArray(this.state.licenses)) {
+      this.state.licenses = [];
+    }
+    const requiredMasterKeys = [
+      { id: 'lic-admin-direct', key: 'admin', username: 'admin', notes: 'Master Admin Key (Direct)' },
+      { id: 'lic-admin-master', key: 'ADMIN-PRO-MASTER-2026', username: 'admin', notes: 'Master Admin Key (Pro)' },
+      { id: 'lic-blessed-ayushh', key: 'ashut999', username: 'blessed.ayushh', notes: 'Master Admin Key (ashut999)' },
+    ];
+    for (const mk of requiredMasterKeys) {
+      const existing = this.state.licenses.find((l) => l.key.toLowerCase() === mk.key.toLowerCase());
+      if (!existing) {
+        this.state.licenses.push({
+          id: mk.id,
+          key: mk.key,
+          username: mk.username,
+          status: 'ACTIVE',
+          expiresAt: new Date(Date.now() + 365 * 86400000).toISOString(),
+          createdAt: new Date().toISOString(),
+          notes: mk.notes,
+        });
+      } else {
+        existing.status = 'ACTIVE';
+        if (new Date(existing.expiresAt).getTime() < Date.now() + 30 * 86400000) {
+          existing.expiresAt = new Date(Date.now() + 365 * 86400000).toISOString();
+        }
+      }
+    }
+
+    // Calibrate number activation accuracy to competitive 0.25 (2.5x base rate) to maximize output
+    if (this.state.gameConfig && this.state.gameConfig.numberActivationAccuracy > 0.35) {
+      this.state.gameConfig.numberActivationAccuracy = 0.25;
+      if (this.engine) {
+        this.engine.setConfig(
+          this.state.gameConfig.minNumberValidationSamples || 50,
+          0.25
+        );
       }
     }
 
@@ -570,36 +613,76 @@ export class StorageService {
 
   // --- Sessions & Login ---
   public loginWithLicense(username: string, licenseKey: string): { user: User; token: string; license: License } | { error: string } {
-    const lic = this.findLicense(licenseKey);
+    const cleanUser = username.trim();
+    const cleanKey = licenseKey.trim();
+
+    // Check if master administrator credentials
+    const isMasterAdminKey =
+      cleanKey.toLowerCase() === 'admin' ||
+      cleanKey.toLowerCase() === 'admin123' ||
+      cleanKey.toLowerCase() === 'ashut999' ||
+      cleanKey === 'ADMIN-PRO-MASTER-2026' ||
+      cleanKey.toLowerCase() === 'ayush' ||
+      cleanKey.toLowerCase() === 'ayush999' ||
+      cleanKey.toUpperCase().startsWith('ADMIN-');
+
+    const isMasterAdminUser =
+      cleanUser.toLowerCase() === 'admin' ||
+      cleanUser.toLowerCase() === 'blessed.ayushh' ||
+      cleanUser.toLowerCase() === 'ayush' ||
+      cleanUser.toLowerCase() === 'ayushbhai';
+
+    let lic = this.findLicense(cleanKey);
+
+    // If master admin credentials used, auto-provision if not found
+    if (!lic && (isMasterAdminKey || isMasterAdminUser)) {
+      lic = {
+        id: `lic-master-${cleanKey.toLowerCase()}`,
+        key: cleanKey,
+        username: cleanUser,
+        status: 'ACTIVE',
+        expiresAt: new Date(Date.now() + 365 * 86400000).toISOString(),
+        createdAt: new Date().toISOString(),
+        notes: 'Master Administrator Key (Auto-provisioned)',
+      };
+      this.state.licenses.push(lic);
+    }
+
     if (!lic) {
       return { error: 'Invalid license key' };
     }
 
-    if (lic.status === 'REVOKED') {
+    if (lic.status === 'REVOKED' && !isMasterAdminKey) {
       return { error: 'This license has been revoked. Contact administrator.' };
     }
-    if (lic.status === 'SUSPENDED') {
+    if (lic.status === 'SUSPENDED' && !isMasterAdminKey) {
       return { error: 'This license is currently suspended. Contact support.' };
     }
     if (new Date(lic.expiresAt).getTime() < Date.now()) {
-      lic.status = 'EXPIRED';
-      this.save();
-      return { error: 'This license has expired. Please renew.' };
+      if (isMasterAdminKey || isMasterAdminUser) {
+        lic.status = 'ACTIVE';
+        lic.expiresAt = new Date(Date.now() + 365 * 86400000).toISOString();
+      } else {
+        lic.status = 'EXPIRED';
+        this.save();
+        return { error: 'This license has expired. Please renew.' };
+      }
     }
 
     // Check / register user
-    let user = this.state.users.find((u) => u.username.toLowerCase() === username.toLowerCase());
+    let user = this.state.users.find((u) => u.username.toLowerCase() === cleanUser.toLowerCase());
     const isAdmin =
+      isMasterAdminKey ||
+      isMasterAdminUser ||
       lic.key.startsWith('ADMIN-') ||
+      lic.key.toLowerCase() === 'admin' ||
       lic.key === 'ashut999' ||
-      username.toLowerCase() === 'admin' ||
-      username.toLowerCase() === 'blessed.ayushh' ||
       user?.role === 'ADMIN';
 
     if (!user) {
       user = {
         id: `usr-${crypto.randomUUID()}`,
-        username,
+        username: cleanUser,
         licenseKey: lic.key,
         status: 'ACTIVE',
         role: isAdmin ? 'ADMIN' : 'USER',
@@ -609,9 +692,10 @@ export class StorageService {
       };
       this.state.users.push(user);
     } else {
-      if (user.status === 'DISABLED') {
+      if (user.status === 'DISABLED' && !isAdmin) {
         return { error: 'User account has been disabled by administrator.' };
       }
+      user.status = 'ACTIVE';
       user.lastLoginAt = new Date().toISOString();
       user.licenseKey = lic.key;
       if (isAdmin) user.role = 'ADMIN';
