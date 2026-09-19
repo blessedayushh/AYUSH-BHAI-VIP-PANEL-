@@ -21,8 +21,10 @@ import { PredictionEngine, GeneratedPredictionsBundle } from './engine/predictio
 import { computeAnalytics } from './engine/walkForward.js';
 import { wsManager } from './wsServer.js';
 
-const DATA_DIR = path.resolve(process.cwd(), 'data');
+const isVercelServerless = Boolean(process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME);
+const DATA_DIR = isVercelServerless ? '/tmp/colorpredict_data' : path.resolve(process.cwd(), 'data');
 const DATA_FILE = path.join(DATA_DIR, 'colorpredict_db.json');
+const BUNDLED_DATA_FILE = path.resolve(process.cwd(), 'data', 'colorpredict_db.json');
 
 export interface DatabaseState {
   gameConfig: GameConfig;
@@ -64,9 +66,15 @@ export class StorageService {
   }
 
   private loadOrCreate() {
-    if (fs.existsSync(DATA_FILE)) {
+    const fileToLoad = fs.existsSync(DATA_FILE)
+      ? DATA_FILE
+      : fs.existsSync(BUNDLED_DATA_FILE)
+      ? BUNDLED_DATA_FILE
+      : null;
+
+    if (fileToLoad) {
       try {
-        const raw = fs.readFileSync(DATA_FILE, 'utf-8');
+        const raw = fs.readFileSync(fileToLoad, 'utf-8');
         this.state = JSON.parse(raw);
         this.ensureSystemAccounts();
         return;

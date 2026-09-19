@@ -59,7 +59,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({ onLoginSuccess }) => {
           <div className="mb-5 p-3 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-start gap-2.5 text-xs text-rose-300">
             <AlertCircle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
             <div>
-              <span className="font-semibold block">Access Denied</span>
+              <span className="font-semibold block">Authentication Notice</span>
               {error}
             </div>
           </div>
