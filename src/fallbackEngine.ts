@@ -15,16 +15,24 @@ import {
 const STORAGE_RESULTS_KEY = 'colorpredict_client_results';
 
 function getStoredResults(): GameResult[] {
+  const now = Date.now();
   try {
     const raw = localStorage.getItem(STORAGE_RESULTS_KEY);
     if (raw) {
       const parsed = JSON.parse(raw);
-      if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        const last = parsed[parsed.length - 1];
+        const lastPrevRound = getWingoActiveRoundId(now - 60000);
+        const currentActive = getWingoActiveRoundId(now);
+        // If stored results are recent, return them
+        if (last && (last.roundId === lastPrevRound || last.roundId === currentActive)) {
+          return parsed;
+        }
+      }
     }
   } catch {}
 
-  // Seed with realistic initial WinGo 1M results
-  const now = Date.now();
+  // Seed with realistic initial WinGo 1M results ending at the previous completed minute
   const seed: GameResult[] = [];
   const numbers = [2, 7, 4, 9, 3, 8, 1, 6, 0, 5, 4, 7, 2, 9, 8, 3, 1, 6, 5, 2, 7, 8, 4, 3, 9, 1, 6, 0, 8, 5];
   for (let i = 0; i < numbers.length; i++) {
@@ -180,8 +188,10 @@ function generateLivePredictions(roundId: string, history: GameResult[]): {
 export function getClientUserDashboard(): UserDashboardData {
   const activeRoundId = getWingoActiveRoundId();
   const now = Date.now();
-  const secondsLeft = 60 - Math.floor((now / 1000) % 60);
-  const nextDrawTime = new Date(now + secondsLeft * 1000).toISOString();
+  const secInMinute = Math.floor((now / 1000) % 60);
+  const secondsLeft = secInMinute < 3 ? 0 : 60 - secInMinute;
+  const nextMinuteEpoch = Math.floor(now / 60000) * 60000 + 60000;
+  const nextDrawTime = new Date(nextMinuteEpoch).toISOString();
 
   const history = getStoredResults();
   const latestResult = history[history.length - 1] || null;

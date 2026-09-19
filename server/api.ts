@@ -111,7 +111,24 @@ apiRouter.get('/auth/me', authMiddleware, (req: AuthenticatedRequest, res: Respo
 // USER ENDPOINTS
 // ============================================================
 
-apiRouter.get('/user/dashboard', authMiddleware, (_req: AuthenticatedRequest, res: Response) => {
+apiRouter.get('/user/dashboard', authMiddleware, async (_req: AuthenticatedRequest, res: Response) => {
+  const now = Date.now();
+  const currentNextDraw = storage.getNextDrawTime();
+  const currentTarget = new Date(currentNextDraw).getTime();
+
+  // In serverless environments (like Vercel), backgroundWorker is not continuously ticking.
+  // If draw time has arrived or passed, attempt quick sync with official WinGo feed.
+  if (isNaN(currentTarget) || currentTarget <= now) {
+    try {
+      await Promise.race([
+        wingoService.sync('serverless_on_demand'),
+        new Promise((resolve) => setTimeout(resolve, 1500)),
+      ]);
+    } catch {
+      // Continue if network timeout
+    }
+  }
+
   const latestBundle = storage.getLatestActivePredictionBundle();
   const latestResult = storage.getLatestResult();
   const recentResults = storage.getResults(10);
@@ -122,10 +139,25 @@ apiRouter.get('/user/dashboard', authMiddleware, (_req: AuthenticatedRequest, re
   // Filter number prediction according to strict activation rule
   const isNumberActive = latestBundle.numberStatus === 'ACTIVE';
 
-  // Compute actual remaining countdown seconds
-  const now = Date.now();
+  // Compute actual remaining countdown seconds cleanly
   const target = new Date(latestBundle.nextDrawTime).getTime();
-  const remainingSeconds = isNaN(target) ? (config.roundIntervalSeconds || 60) : Math.max(0, Math.ceil((target - now) / 1000));
+  let remainingSeconds = isNaN(target) ? (config.roundIntervalSeconds || 60) : Math.ceil((target - Date.now()) / 1000);
+
+  // If remaining seconds is <= 0: check if we are in the real 0-3s draw window or past it
+  if (remainingSeconds <= 0) {
+    const secInMinute = Math.floor(Date.now() / 1000) % 60;
+    if (secInMinute >= 3) {
+      // Past the 3s draw window: advance to next upcoming minute boundary
+      const nextEpoch = Math.floor(Date.now() / 60000) * 60000 + 60000;
+      const newNextDrawTime = new Date(nextEpoch).toISOString();
+      storage.setNextDrawTime(newNextDrawTime);
+      latestBundle.nextDrawTime = newNextDrawTime;
+      remainingSeconds = Math.max(1, Math.ceil((nextEpoch - Date.now()) / 1000));
+    } else {
+      // Actively drawing right now during the 0-3s window
+      remainingSeconds = 0;
+    }
+  }
 
   return res.json({
     activeRoundId: latestBundle.roundId,

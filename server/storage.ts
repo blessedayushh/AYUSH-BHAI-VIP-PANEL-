@@ -780,6 +780,14 @@ export class StorageService {
   }
 
   public getNextDrawTime(): string {
+    const now = Date.now();
+    const target = this.state.nextDrawTime ? new Date(this.state.nextDrawTime).getTime() : 0;
+    if (!this.state.nextDrawTime || isNaN(target) || target <= now) {
+      const interval = this.state.gameConfig.roundIntervalSeconds || 60;
+      const nextEpoch = Math.floor(now / (interval * 1000)) * (interval * 1000) + (interval * 1000);
+      this.state.nextDrawTime = new Date(nextEpoch).toISOString();
+      this.save();
+    }
     return this.state.nextDrawTime;
   }
 
@@ -989,7 +997,7 @@ export class StorageService {
     numberStatus: NumberPredictionStatus;
     nextDrawTime: string;
   } {
-    let roundId = this.state.activeRoundId;
+    let roundId = this.getActiveRoundId();
     let roundPreds = this.getPredictionsForRound(roundId);
 
     // If none exist for active round, generate them now
@@ -1019,7 +1027,7 @@ export class StorageService {
       size,
       number,
       numberStatus,
-      nextDrawTime: this.state.nextDrawTime,
+      nextDrawTime: this.getNextDrawTime(),
     };
   }
 

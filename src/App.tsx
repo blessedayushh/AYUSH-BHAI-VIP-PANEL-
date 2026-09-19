@@ -75,6 +75,10 @@ export default function App() {
   }, []);
 
   const fetchUserData = useCallback(async () => {
+    const now = Date.now();
+    const secInMin = Math.floor(now / 1000) % 60;
+    const nextMinuteBoundary = Math.floor(now / 60000) * 60000 + 60000;
+
     try {
       const data = await api.getUserDashboard();
       if (data) {
@@ -83,28 +87,35 @@ export default function App() {
         if (data.activeRoundId) {
           setActiveRoundId(data.activeRoundId);
         }
-        if (typeof data.countdownSeconds === 'number') {
-          const sec = Math.max(0, data.countdownSeconds);
-          targetDrawTimeRef.current = Date.now() + sec * 1000;
+        if (typeof data.countdownSeconds === 'number' && data.countdownSeconds > 0) {
+          const sec = data.countdownSeconds;
+          targetDrawTimeRef.current = now + sec * 1000;
           setCountdownSeconds(sec);
         } else if (data.nextDrawTime) {
           const target = new Date(data.nextDrawTime).getTime();
-          const diffSec = !isNaN(target) ? Math.max(0, Math.ceil((target - Date.now()) / 1000)) : 60;
-          targetDrawTimeRef.current = Date.now() + diffSec * 1000;
-          setCountdownSeconds(diffSec);
+          const diffSec = !isNaN(target) ? Math.ceil((target - now) / 1000) : 0;
+          if (diffSec > 0) {
+            targetDrawTimeRef.current = now + diffSec * 1000;
+            setCountdownSeconds(diffSec);
+          } else {
+            targetDrawTimeRef.current = nextMinuteBoundary;
+            setCountdownSeconds(secInMin < 3 ? 0 : Math.max(0, Math.ceil((nextMinuteBoundary - now) / 1000)));
+          }
+        } else {
+          targetDrawTimeRef.current = nextMinuteBoundary;
+          setCountdownSeconds(secInMin < 3 ? 0 : Math.max(0, Math.ceil((nextMinuteBoundary - now) / 1000)));
         }
       }
     } catch (err) {
       console.warn('Could not fetch user dashboard', err);
       // Fallback engine ensures live engine never gets stuck in connecting
       setDashboardData((prev) => {
-        if (!prev) {
-          const fallback = getClientUserDashboard();
-          setIsDataSynced(true);
-          return fallback;
-        }
-        return prev;
+        const fallback = getClientUserDashboard();
+        setIsDataSynced(true);
+        return fallback || prev;
       });
+      targetDrawTimeRef.current = nextMinuteBoundary;
+      setCountdownSeconds(secInMin < 3 ? 0 : Math.max(0, Math.ceil((nextMinuteBoundary - now) / 1000)));
     }
   }, []);
 
@@ -151,9 +162,10 @@ export default function App() {
       if (typeof data.remainingSeconds === 'number') {
         const serverSec = Math.max(0, Math.floor(data.remainingSeconds));
 
-        // When drawing is in progress (0), immediately lock to 0
+        // When drawing is in progress (0), show 0 but align targetDrawTimeRef to upcoming minute boundary so it doesn't get stuck
         if (serverSec === 0) {
-          targetDrawTimeRef.current = Date.now();
+          const now = Date.now();
+          targetDrawTimeRef.current = Math.floor(now / 60000) * 60000 + 60000;
           setCountdownSeconds(0);
           return;
         }
@@ -270,18 +282,36 @@ export default function App() {
   // High-precision smooth ticker based on target epoch timestamp (resilient to tab switching & zero drift)
   useEffect(() => {
     const timer = setInterval(() => {
-      if (targetDrawTimeRef.current > 0) {
-        const remaining = Math.max(0, Math.ceil((targetDrawTimeRef.current - Date.now()) / 1000));
-        setCountdownSeconds((prev) => {
-          // If countdown just crossed zero, auto-fetch results and new prediction after a 1.2s buffer
-          if (prev > 0 && remaining === 0) {
-            setTimeout(() => {
-              fetchUserData();
-            }, 1200);
-          }
-          return prev !== remaining ? remaining : prev;
-        });
+      const now = Date.now();
+      const currentSecInMin = Math.floor(now / 1000) % 60;
+
+      // Self-healing check: if targetDrawTimeRef is unset or expired by more than 3.5 seconds (Vercel serverless / cold-start lag)
+      if (targetDrawTimeRef.current <= 0 || (targetDrawTimeRef.current > 0 && now - targetDrawTimeRef.current >= 3500)) {
+        // Automatically advance targetDrawTimeRef to upcoming minute boundary (:00)
+        const nextMinuteEpoch = Math.floor(now / 60000) * 60000 + 60000;
+        targetDrawTimeRef.current = nextMinuteEpoch;
+        setActiveRoundId(getWingoActiveRoundId(now));
+        // Fetch freshly drawn result and new predictions
+        fetchUserData();
       }
+
+      // Compute remaining seconds from target
+      let remaining = Math.max(0, Math.ceil((targetDrawTimeRef.current - now) / 1000));
+
+      // Display 0 ("DRAWING...") during the brief 0-2.5s draw resolution window at the minute boundary
+      if (currentSecInMin < 3 && remaining >= 57) {
+        remaining = 0;
+      }
+
+      setCountdownSeconds((prev) => {
+        // If countdown just crossed zero from positive, trigger fetch after 1.5s to capture the freshly drawn result
+        if (prev > 0 && remaining === 0) {
+          setTimeout(() => {
+            fetchUserData();
+          }, 1500);
+        }
+        return prev !== remaining ? remaining : prev;
+      });
     }, 250);
     return () => clearInterval(timer);
   }, [fetchUserData]);
